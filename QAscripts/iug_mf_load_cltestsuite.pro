@@ -5,44 +5,48 @@
 ;2 single site
 ;
 ; iug_load_mf_rish,site = 'pam'
+; 
+;3 multi sites
 ;
-;3 site array
+; iug_load_mf_rish,site = 'pam pon'
+; 
+;4 multi sites array
 ;
-; iug_load_mf_rish,site = ['pam']
+; iug_load_mf_rish,site = ['pam','pon']
 ;
-;4 caps site
+;5 caps site
 ;
 ; iug_load_mf_rish,site='PAM'
 ;
-;5 load all sites
+;6 load all sites
 ;
 ; iug_load_mf_rish,site='all'
 ;
-;6 load * sites
+;7 load * sites
 ;
 ; iug_load_mf_rish,site='*'
 ;
-;7 single datatype
+;8 single datatype
 ;
 ; iug_load_mf_rish,datatype='thermosphere'
 ;
-;8 caps datatype
+;9 caps datatype
 ;
 ; iug_load_mf_rish,datatype='THERMOSPHERE'
 ;
-;9 * datatype
+;10 * datatype
 ;
 ; iug_load_mf_rish,datatype='*'
 ;
-;10 array datatype
+;11 array datatype
 ;
 ; iug_load_mf_rish,datatype=['thermosphere']
 ;
-;11 verbose
+;12 verbose
 ;
 ; iug_load_mf_rish,site='pam',/verbose
 ;
-;12 /downloadonly
+;13 /downloadonly
 ;
 ; iug_load_mf_rish,site='pam',/downloadonly
 ;
@@ -68,14 +72,14 @@ thm_init
 ;	*** set time span ***
 qa_timespan = strarr(2,2)
 
-qa_timespan[0,*] = [ '2008-03-30', '2008-03-31']
+qa_timespan[0,*] = [ '2010-02-12', '2010-02-13']
 
 qa_timespan[1,*] = [ '2005-07-29', '2005-07-30']
 
 qa_t = 0
 ;;qa_t = 1
 
-timespan,qa_timespan[qa_t,0],1,/hour
+timespan,qa_timespan[qa_t,0],1,/day
 
 del_data,'*'
 
@@ -91,9 +95,10 @@ if err eq 0 then begin
   iug_load_mf_rish
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -119,7 +124,7 @@ if err eq 0 then begin
   iug_load_mf_rish,site='pam'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
   if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -132,27 +137,25 @@ handle_error,err,t_name,++t_num
 
 del_data,'*'
 
-;
-;3 site array
-;
-; iug_load_mf_rish,site=['pam']
-;
 
-t_name='site array'
+;3 multi sites
+;
+; iug_load_mf_rish,site = 'pam pon'
+
+t_name='multi sites'
 
 catch,err
 
 if err eq 0 then begin
 
-  iug_load_mf_rish,site=['pam']
-;;	print, '%%%'
-;;	tplot_names
-;;	print, '%%%'
+  iug_load_mf_rish,site = 'pam pon'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -163,8 +166,42 @@ handle_error,err,t_name,++t_num
 
 del_data,'*'
 
+
 ;
-;4 caps site
+;4 multi sites array
+;
+; iug_load_mf_rish,site=['pam','pon']
+;
+
+t_name='multi sites array'
+
+catch,err
+
+if err eq 0 then begin
+
+  iug_load_mf_rish,site=['pam','pon']
+;;	print, '%%%'
+;;	tplot_names
+;;	print, '%%%'
+
+;just spot checking cause there are a lot of data types
+  print_tvar_info,'rish_mf'
+
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
+
+endif
+
+catch,/cancel
+
+handle_error,err,t_name,++t_num
+
+del_data,'*'
+
+;
+;5 caps site
 ;
 ; iug_load_mf_rish,site='PAM'
 ;
@@ -178,7 +215,7 @@ if err eq 0 then begin
   iug_load_mf_rish,site='PAM'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
   if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -192,7 +229,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;5 load all sites
+;6 load all sites
 ;
 ; iug_load_mf_rish,site = 'all'
 ;
@@ -206,10 +243,12 @@ if err eq 0 then begin
   iug_load_mf_rish,site = 'all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
 
 endif
 
@@ -220,7 +259,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;6 load * sites
+;7 load * sites
 ;
 ; iug_load_mf_rish, site='*'
 ;
@@ -234,10 +273,12 @@ if err eq 0 then begin
   iug_load_mf_rish, site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
 
 endif
 
@@ -248,7 +289,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;7 single datatype
+;8 single datatype
 ;
 ; iug_load_mf_rish, datatype = 'thermosphere'
 ;
@@ -262,10 +303,12 @@ if err eq 0 then begin
   iug_load_mf_rish, datatype = 'thermosphere'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
 
 endif
 
@@ -275,7 +318,7 @@ handle_error,err,t_name,++t_num
 
 del_data,'*'
 
-;8 caps datatype
+;9 caps datatype
 ;
 ; iug_load_mf_rish, datatype = 'THERMOSPHERE'
 ;
@@ -290,10 +333,12 @@ if err eq 0 then begin
 	print, tnames('*')
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
 
 endif
 
@@ -304,7 +349,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;9 * datatype
+;10 * datatype
 ;
 ; iug_load_mf_rish,datatype = '*'
 ;
@@ -321,10 +366,12 @@ if err eq 0 then begin
 ;;	print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
 
 endif
 
@@ -336,7 +383,7 @@ del_data,'*'
 
 
 ;
-;10 array datatype
+;11 array datatype
 ;
 ; iug_load_mf_rish,datatype = ['thermosphere']
 ;
@@ -353,10 +400,12 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_mf_pam_nc'
+  print_tvar_info,'rish_mf'
 
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
+                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  then message,'invalid load'
 
 endif
 
@@ -367,7 +416,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;11 verbose
+;12 verbose
 ;
 ;iug_load_mf_rish,site='pam',/verbose
 ;
@@ -389,7 +438,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;18 /downloadonly
+;13 /downloadonly
 ;
 ;  iug_load_mf_rish,site='pam',/downloadonly
 ;

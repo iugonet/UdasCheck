@@ -8,11 +8,11 @@
 ;
 ;3 multi sites string
 ;
-; iug_load_meteor_rish,site = 'ktb srp'
+; iug_load_meteor_rish,site = 'bik ktb sgk srp'
 ;
 ;4 multi sites array
 ;
-; iug_load_meteor_rish,site = ['ktb', 'srp']
+; iug_load_meteor_rish,site = ['bik','ktb','sgk','srp']
 ;
 ;5 caps site
 ;
@@ -81,7 +81,7 @@
 ;
 ;
 ; $LastChangedBy: A. Shinbori $
-; $LastChangedDate: 2011-10-22 (22 Oct 2011) $
+; $LastChangedDate: 2013-05-30 (30 May 2013) $
 ; $LastChangedRevision: 213 $
 ; $URL: $
 ;-
@@ -179,7 +179,7 @@ del_data,'*'
 ;
 ;3 multi sites string
 ;
-; iug_load_meteor_rish,site = 'ktb srp'
+; iug_load_meteor_rish,site = 'bik ktb sgk srp'
 ;
 
 t_name='multi site string'
@@ -188,7 +188,7 @@ catch,err
 
 if err eq 0 then begin
 
-   iug_load_meteor_rish,site = 'ktb srp'
+   iug_load_meteor_rish,site = 'bik ktb sgk srp'
 
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_meteor_ktb_nc'
@@ -213,7 +213,7 @@ del_data,'*'
 ;
 ;4 multi sites array
 ;
-; iug_load_meteor_rish,site = ['ktb', 'srp']
+; iug_load_meteor_rish,site = ['bik','ktb','sgk','srp']
 ;
 
 t_name='multi sites array'
@@ -222,7 +222,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_meteor_rish,site = ['ktb', 'srp']
+  iug_load_meteor_rish,site = ['bik','ktb','sgk','srp']
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
