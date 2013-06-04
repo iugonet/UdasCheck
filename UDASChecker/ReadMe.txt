@@ -1,12 +1,8 @@
-1. Copy tdas and udas in UDASChecker directory.
+1. Add 'makepng' and 'time_stamp, /off' commands to cribsheets and rename them 
+to check_iug_crib_.....pro. Then, put them into check_examples directory.
 
-2. Add makepng commands to cribsheets and put check_examples directory.
-Rename the cribsheets to check_iug_crib_.....pro.
+2. Set path to "check_examples", "tdas", and "udas".
 
-3. Set path to "check_examples", "tdas", and "udas".
-
-4. Comment out a line "timestamp,..." in tplot.pro.
-
-5. Execute udas-checker.sh
-
+3. Execute udas-checker.sh
 ./udas-checker.sh -m CUI
+

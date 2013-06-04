@@ -8,8 +8,8 @@
 ;
 ; NOTE: See the rules of the road.
 ;       For more information, see:
-;       http://polaris.nipr.ac.jp/~dbase/e/100/e/100_03_UAPM_at_Syowa_e.htm
-;    &  http://polaris.nipr.ac.jp/~dbase/e/100/e/100_15_Iceland_e.htm
+;       http://scidbase.nipr.ac.jp/modules/metadata/index.php?content_id=103
+;    &  http://scidbase.nipr.ac.jp/modules/metadata/index.php?content_id=115
 ; Written by: Y.-M. Tanaka, May 2, 2011
 ;             National Institute of Polar Research, Japan.
 ;             ytanaka at nipr.ac.jp
@@ -22,7 +22,7 @@ thm_init
 timespan, '2003-10-29'
 
 ; Load NIPR data
-erg_load_gmag_nipr,site=['syo','hus','tjo']
+iug_load_gmag_nipr,site=['syo','hus','tjo']
 
 ; View the loaded data names
 tplot_names
@@ -30,11 +30,10 @@ tplot_names
 ; Plot the loaded data
 tplot,'nipr_mag_*'
 
-makepng, 'iug_crib_gmag_nipr_001'
-
 ; Stop
 print,'Enter ".c" to continue.'
-;stop
+; stop
+makepng, 'iug_crib_gmag_nipr_001'
 
 ; Set new timespan
 timespan,'2003-10-29/06:00:00',4,/hours

@@ -18,6 +18,7 @@
 
 ; Initialize
 thm_init
+time_stamp, /off
 
 ; Set the date and duration (in days)
 timespan, '2006-04-17'
