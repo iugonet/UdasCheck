@@ -16,6 +16,7 @@
 
 ; Initialize
 thm_init
+time_stamp, /off
 
 ; Make query
 mddb_url = 'http://search.iugonet.org/iugonet/open-search/'

@@ -13,6 +13,7 @@
 
 ; Initialize
 thm_init
+time_stamp, /off
 
 ; Set the date and duration
 timespan, '2005-08-03/05:00', 6, /minute

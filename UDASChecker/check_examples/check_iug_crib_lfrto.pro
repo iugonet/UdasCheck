@@ -13,6 +13,7 @@
 
 ;Initialize
 thm_init 
+time_stamp, /off
 
 ;Specify the time span.
 timespan, '2010-05-29/04:00:00',9,/hour

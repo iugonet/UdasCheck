@@ -12,6 +12,7 @@
 
 ;Initialize
 thm_init
+time_stamp, /off
 
 ;Set the date and time for loading data
 timespan, '2007-01-22',2

@@ -24,6 +24,8 @@
 ;Initialize
  
 thm_init 
+time_stamp, /off
+
 ;-----------------
 ;    Program
 ;-----------------
