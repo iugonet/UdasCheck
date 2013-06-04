@@ -111,7 +111,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
                   'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -144,7 +144,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -178,7 +178,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
                   'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -215,7 +215,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
                   'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
   
 endif
@@ -248,7 +248,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -282,7 +282,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
                   'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -316,7 +316,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
                   'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
     
 endif
@@ -507,7 +507,7 @@ if err eq 0 then begin
                   'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
                   'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
                   'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
