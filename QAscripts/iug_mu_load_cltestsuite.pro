@@ -659,7 +659,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00'
+  iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -691,7 +691,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00 h2t60min00'
+  iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00 h2t60min00'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -725,7 +725,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = ['h1t60min00','h2t60min00']
+  iug_load_mu, datatype = 'meteor', parameter1 = ['h1t60min00','h2t60min00']
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -759,7 +759,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = 'H1T60MIN00'
+  iug_load_mu, datatype = 'meteor', parameter1 = 'H1T60MIN00'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -791,7 +791,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = 'all'
+  iug_load_mu, datatype = 'meteor', parameter1 = 'all'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -828,7 +828,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = 'all'
+  iug_load_mu, datatype = 'meteor', parameter1 = 'all'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
