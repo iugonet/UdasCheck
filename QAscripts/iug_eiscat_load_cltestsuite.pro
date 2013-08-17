@@ -67,7 +67,7 @@ thm_init
 qa_timespan1 = ['2011-02-01', '2011-02-02']
 ;qa_timespan1 = ['2011-01-10', '2011-01-11']
 
-timespan,qa_timespan1,24,/hour
+timespan,qa_timespan1
 
 del_data,'*'
 
@@ -323,9 +323,6 @@ handle_error,err,t_name,++t_num
 
 del_data,'*'
 
-
-timespan,qa_timespan1,24,/hour
-
 ;
 ;10 verbose
 ;
@@ -359,7 +356,7 @@ catch,err
 if err eq 0 then begin
   iug_load_eiscat,site='esr_42m',/downloadonly
 
-  if data_exists('eiscat_esr42m_ne',qa_timespan1,qa_timespan1) $
+  if data_exists('eiscat_esr42m_ne',qa_timespan1[0],qa_timespan1[1]) $
     then message,'invalid load'
 
 endif
@@ -384,7 +381,7 @@ catch,err
 if err eq 0 then begin
   iug_load_eiscat,site='esr_42m',/no_download
 
-  if data_exists('eiscat_esr42m_ne',qa_timespan1,qa_timespan1) $
+  if data_exists('eiscat_esr42m_ne',qa_timespan1[0],qa_timespan1[1]) $
       then message, 'Unexpected data in temporary directory'+root_data_dir()
 
 endif

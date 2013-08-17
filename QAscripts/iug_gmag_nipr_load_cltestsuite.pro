@@ -81,7 +81,7 @@ qa_timespan[1,*] = [ '1987-02-22', '1987-02-23']
 qa_t = 0
 ;;qa_t = 1
 
-timespan,qa_timespan[qa_t,0],1,/hour
+timespan,qa_timespan[qa_t, *]
 
 del_data,'*'
 
@@ -473,7 +473,7 @@ del_data,'*'
 
 t_name='/fproton'
 qa_t = 1				; timerange
-timespan,qa_timespan[qa_t,0],1,/hour	; change time range
+timespan,qa_timespan[qa_t, *]		; change time range
 
 catch,err
 

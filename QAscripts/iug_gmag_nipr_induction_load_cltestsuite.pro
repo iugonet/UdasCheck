@@ -48,7 +48,6 @@ init_tests
 
 ;prepare to run tests
 t_num = 0
-t_dateA = '2006-04-17'
 t_date0 = '2006-04-17/00:00:00'
 t_date1 = '2006-04-18/00:00:00'
 
@@ -59,7 +58,7 @@ thm_init
 ;set to somewhere appropriate, if needed
 ;!themis.local_data_dir = '/disks/themisdata/'
 ;timespan,'2008-02-28',1,/hour
-timespan, t_dateA, 1 ,/day
+timespan, t_date0, 1 ,/day
 
 del_data,'*'
 
