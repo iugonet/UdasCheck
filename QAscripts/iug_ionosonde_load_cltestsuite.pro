@@ -71,7 +71,7 @@ thm_init
 ;	*** set time span ***
 qa_timespan = strarr(2,2)
 
-qa_timespan[0,*] = ['2011-05-31 15:00', '2011-06-01 14:59']
+qa_timespan[0,*] = ['2011-06-01 00:00', '2011-06-02 00:00']
 
 qa_timespan[1,*] = ['2005-07-29', '2005-07-30']
 
@@ -98,9 +98,8 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
-
 endif
 
 catch,/cancel
@@ -126,7 +125,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -157,7 +156,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
   
 endif
@@ -185,7 +184,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
     
 endif
@@ -213,7 +212,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -241,7 +240,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
     
 endif
@@ -269,7 +268,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
     
 endif
@@ -297,7 +296,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
     
 endif
@@ -328,7 +327,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -360,7 +359,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_ionosonde_sgk'
 
-  if data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -424,7 +423,7 @@ catch,err
 if err eq 0 then begin
   iug_load_ionosonde_rish,site='sgk',/fixed_freq
 
-  if data_exists('iug_ionosonde_sgk_freq_2MHz iug_ionosonde_sgk_freq_3MHz iug_ionosonde_sgk_freq_4MHz iug_ionosonde_sgk_freq_5MHz '+$
+  if ~data_exists('iug_ionosonde_sgk_freq_2MHz iug_ionosonde_sgk_freq_3MHz iug_ionosonde_sgk_freq_4MHz iug_ionosonde_sgk_freq_5MHz '+$
                  'iug_ionosonde_sgk_freq_6MHz iug_ionosonde_sgk_freq_7MHz iug_ionosonde_sgk_freq_8MHz iug_ionosonde_sgk_freq_9MHz '+$
                  'iug_ionosonde_sgk_freq_10MHz iug_ionosonde_sgk_freq_11MHz iug_ionosonde_sgk_freq_12MHz iug_ionosonde_sgk_freq_13MHz '+$
                  'iug_ionosonde_sgk_freq_14MHz iug_ionosonde_sgk_freq_15MHz iug_ionosonde_sgk_freq_16MHz iug_ionosonde_sgk_freq_17MHz '+$
