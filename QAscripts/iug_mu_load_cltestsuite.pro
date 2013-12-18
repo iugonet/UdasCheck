@@ -650,7 +650,7 @@ timespan,qa_timespan[qa_t,0],1,/day
 ;
 ;14 single parameter for meteor mode observarion
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00'
 ;
 
 t_name='single parameter'
@@ -682,7 +682,7 @@ del_data,'*'
 ;
 ;15 multi parameters string
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00 h2t60min00'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00 h2t60min00'
 ;
 
 t_name='multi parameter string'
@@ -716,7 +716,7 @@ del_data,'*'
 ;
 ;16 multi parameters array
 ;
-; iug_load_mu, datatype = 'meteor', parameter = ['h1t60min00','h2t60min00']
+; iug_load_mu, datatype = 'meteor', parameter1 = ['h1t60min00','h2t60min00']
 ;
 
 t_name='multi parameter array'
@@ -750,7 +750,7 @@ del_data,'*'
 ;
 ;17 caps parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'H1T60MIN00'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'H1T60MIN00'
 ;
 
 t_name='caps parameter'
@@ -782,7 +782,7 @@ del_data,'*'
 ;
 ;18 load all parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'all'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'all'
 ;
 
 t_name='all parameter'
@@ -819,7 +819,7 @@ del_data,'*'
 ;
 ;19 load * parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'all'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'all'
 ; 
 
 t_name='* parameter'
