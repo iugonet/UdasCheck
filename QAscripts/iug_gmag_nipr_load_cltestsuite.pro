@@ -8,7 +8,7 @@
 ;
 ;3 multi sites string
 ;
-; iug_load_gmag_nipr,site='syo hus'
+; iug_load_gmag_nipr,site='syo hus skl'
 ;
 ;4 multi sites array
 ;
@@ -97,9 +97,9 @@ if err eq 0 then begin
   iug_load_gmag_nipr
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -141,7 +141,7 @@ del_data,'*'
 ;
 ;3 multi sites string
 ;
-; iug_load_gmag_nipr,site='syo hus'
+; iug_load_gmag_nipr,site='syo hus skl'
 ;
 
 t_name='multi site string'
@@ -150,12 +150,12 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_nipr,site='syo hus'
+  iug_load_gmag_nipr,site='syo hus skl'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz', $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_skl_1sec', $
 	qa_timespan[qa_t,0],qa_timespan[qa_t,1]) then message,'invalid load'
 
 endif
@@ -240,9 +240,9 @@ if err eq 0 then begin
   iug_load_gmag_nipr,site='all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -268,9 +268,9 @@ if err eq 0 then begin
   iug_load_gmag_nipr,site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -296,9 +296,9 @@ if err eq 0 then begin
   iug_load_gmag_nipr,datatype='1sec'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -324,9 +324,9 @@ if err eq 0 then begin
 	print, tnames('*')
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -355,9 +355,9 @@ if err eq 0 then begin
 ;;	print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz', $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec', $
 	qa_timespan[qa_t,0],qa_timespan[qa_t,1]) then message,'invalid load'
 
 endif
@@ -383,9 +383,9 @@ if err eq 0 then begin
   iug_load_gmag_nipr,datatype=['1sec']
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'nipr_mag_hus_1sec'
+  print_tvar_info,'nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec'
 
-  if ~data_exists('nipr_mag_syo_1sec', $
+  if ~data_exists('nipr_mag_syo_1sec nipr_mag_hus_02hz nipr_mag_tjo_02hz nipr_mag_h57_1sec nipr_mag_skl_1sec', $
 	qa_timespan[qa_t,0],qa_timespan[qa_t,1]) then message,'invalid load'
 
 endif
@@ -429,7 +429,7 @@ catch,err
 if err eq 0 then begin
   iug_load_gmag_nipr,site='syo',/downloadonly
 
-  if data_exists('nipr_mag_syo_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if data_exists('nipr_mag_syo_1sec',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif

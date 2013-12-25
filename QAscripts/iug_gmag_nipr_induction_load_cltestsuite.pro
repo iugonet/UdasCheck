@@ -38,6 +38,10 @@
 ;
 ; iug_load_gmag_nipr_induction, /no_download
 ;
+;11 /no_server
+;
+; iug_load_gmag_nipr_induction, /no_server
+;
 ; $LastChangedBy: segawa $
 ; $LastChangedDate: 2011-07-19 17:00:22 +0900 (Tue, 19 Jul 2011) $
 ; $LastChangedRevision: 196 $
@@ -74,10 +78,10 @@ if err eq 0 then begin
   iug_load_gmag_nipr_induction
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info, 'nipr_imag_syo_20hz'
+  print_tvar_info, 'nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz'
 
-  if ~data_exists('nipr_imag_syo_20hz', t_date0, t_date1) $
-   then message,'invalid load'
+  if ~data_exists('nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz', $
+	t_date0, t_date1) then message,'invalid load'
 
 endif
 
@@ -130,9 +134,9 @@ if err eq 0 then begin
   iug_load_gmag_nipr_induction,site='syo hus'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info, 'nipr_imag_syo_20hz'
+  print_tvar_info, 'nipr_imag_syo_20hz nipr_imag_hus_02hz'
 
-  if ~data_exists('nipr_imag_syo_20hz', t_date0, t_date1) $
+  if ~data_exists('nipr_imag_syo_20hz nipr_imag_hus_02hz', t_date0, t_date1) $
    then message,'invalid load'
 
 endif
@@ -155,13 +159,13 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_nipr_induction,site=['syo','hus','tjo','aed','isa']
+  iug_load_gmag_nipr_induction,site=['syo','hus','tjo','aed']
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info, 'nipr_imag_syo_20hz'
+  print_tvar_info, 'nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz'
 
-  if ~data_exists('nipr_imag_syo_20hz', t_date0, t_date1) $
-   then message,'invalid load'
+  if ~data_exists('nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz', $
+	t_date0, t_date1) then message,'invalid load'
 
 endif
 
@@ -216,10 +220,10 @@ if err eq 0 then begin
   iug_load_gmag_nipr_induction,site='all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info, 'nipr_imag_syo_20hz'
+  print_tvar_info, 'nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz'
 
-  if ~data_exists('nipr_imag_syo_20hz', t_date0, t_date1) $
-   then message,'invalid load'
+  if ~data_exists('nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz', $
+	t_date0, t_date1) then message,'invalid load'
 
 endif
 
@@ -243,10 +247,10 @@ if err eq 0 then begin
   iug_load_gmag_nipr_induction,site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info, 'nipr_imag_syo_20hz'
+  print_tvar_info, 'nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz'
 
-  if ~data_exists('nipr_imag_syo_20hz', t_date0, t_date1) $
-   then message,'invalid load'
+  if ~data_exists('nipr_imag_syo_20hz nipr_imag_hus_02hz nipr_imag_tjo_02hz nipr_imag_aed_02hz', $
+	t_date0, t_date1) then message,'invalid load'
 
 endif
 
@@ -321,6 +325,30 @@ catch,err
 if err eq 0 then begin
 
   iug_load_gmag_nipr_induction, /no_download
+
+  if ~data_exists('nipr_imag_syo_20hz', $
+	t_date0, t_date1) then message,'invalid data load'
+
+endif
+
+catch,/cancel
+
+handle_error,err,t_name,++t_num
+
+del_data,'*'
+
+
+;11 /no_server
+;
+; iug_load_gmag_nipr_induction, /no_server
+
+t_name = 'no_server'
+
+catch,err
+
+if err eq 0 then begin
+
+  iug_load_gmag_nipr_induction, /no_server
 
   if ~data_exists('nipr_imag_syo_20hz', $
 	t_date0, t_date1) then message,'invalid data load'
