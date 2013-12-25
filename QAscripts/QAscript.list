@@ -1,20 +1,24 @@
+iug_aws_load_cltestsuite.pro
 iug_blr_load_cltestsuite.pro
 iug_ear_load_cltestsuite.pro
 iug_eiscat_load_cltestsuite.pro
+iug_eiscat_vief_load_cltestsuite.pro
 iug_gmag_nipr_load_cltestsuite.pro
 iug_gmag_serc_load_cltestsuite.pro
 iug_gmag_wdc_load_cltestsuite.pro
+iug_gmag_nipr_induction_load_cltestsuite.pro
+iug_hf_tohokuu_load_cltestsuite.pro
+iug_ionosonde_load_cltestsuite.pro
 iug_iprt_load_cltestsuite.pro
+iug_irio_nipr_load_cltestsuite.pro
+iug_kyushugcm_load_cltestsuite.pro
+iug_lfrto_load_cltestsuite.pro
 iug_ltr_load_cltestsuite.pro
 iug_meteor_load_cltestsuite.pro
 iug_mf_load_cltestsuite.pro
 iug_mu_load_cltestsuite.pro
+iug_radiosonde_load_cltestsuite.pro
+iug_smart_load_cltestsuite.pro
 iug_wpr_load_cltestsuite.pro
-iug_aws_load_cltestsuite.pro
-iug_ionosonde_load_cltestsuite.pro
-iug_hf_tohokuu_load_cltestsuite.pro
-iug_lfrto_load_cltestsuite.pro
 
-#iug_infrasound_load_cltestsuite.pro
-#erg_gmag_nipr_load_cltestsuite.pro
-
+# iug_infrasound_load_cltestsuite.pro
