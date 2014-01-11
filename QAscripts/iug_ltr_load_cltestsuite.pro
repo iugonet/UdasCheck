@@ -22,55 +22,39 @@
 ;
 ; iug_load_ltr_rish,site='*'
 ;
-;7 single datatype
-;
-; iug_load_ltr_rish,datatype='troposphere'
-;
-;8 caps datatype
-;
-; iug_load_ltr_rish,datatype='TROPOSPHERE'
-;
-;9 * datatype
-;
-; iug_load_ltr_rish,datatype='*'
-;
-;10 array datatype
-;
-; iug_load_ltr_rish,datatype=['troposphere']
-;
-;11 single parameter
+;7 single parameter
 ;
 ; iug_load_ltr_rish,parameter='uwnd'
 ;
-;12 multi parameters string
+;8 multi parameters string
 ;
 ; iug_load_ltr_rish,site = 'uwnd vwnd'
 ;
-;13 multi parameters array
+;9 multi parameters array
 ;
 ; iug_load_ltr_rish,site = ['uwnd', 'pwr1', 'wdt1']
 ;
-;14 caps parameter
+;10 caps parameter
 ;
 ; iug_load_ltr_rish,parameter='UWND'
 ;
-;15 * parameter
+;11 * parameter
 ;
 ; iug_load_ltr_rish,parameter='*'
 ;
-;16 array parameter
+;12 array parameter
 ;
 ; iug_load_ltr_rish,parameter=['uwnd']
 ; 
-;17 all parameter
+;13 all parameter
 ;
 ; iug_load_ltr_rish,parameter='all'
 ; 
-;18 verbose
+;14 verbose
 ;
 ; iug_load_ltr_rish,site='sgk',/verbose
 ;
-;19 /downloadonly
+;15 /downloadonly
 ;
 ; iug_load_ltr_rish,site='sgk',/downloadonly
 ;
@@ -78,7 +62,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2011-10-22 (22 Oct 2011) $
-; $LastChangedRevision: 2012-11-12 (12 Nov 2012) $
+; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
 ; $URL: $
 ;-
 
@@ -299,140 +283,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;7 single datatype
-;
-; iug_load_ltr_rish, datatype = 'troposphere'
-;
-
-t_name='single datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ltr_rish, datatype = 'troposphere'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
-
-  if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
-                  'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
-                  'iug_ltr_sgk_pwr4 iug_ltr_sgk_pwr5 iug_ltr_sgk_wdt1 '+$
-                  'iug_ltr_sgk_wdt2 iug_ltr_sgk_wdt3 iug_ltr_sgk_wdt4 '+$
-                  'iug_ltr_sgk_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;8 caps datatype
-;
-; iug_load_ltr_rish,datatype='TROPOSPHERE'
-;
-
-t_name='caps datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ltr_rish, datatype = 'TROPOSPHERE'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
-
-  if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
-                  'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
-                  'iug_ltr_sgk_pwr4 iug_ltr_sgk_pwr5 iug_ltr_sgk_wdt1 '+$
-                  'iug_ltr_sgk_wdt2 iug_ltr_sgk_wdt3 iug_ltr_sgk_wdt4 '+$
-                  'iug_ltr_sgk_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;9 * datatype
-;
-; iug_load_ltr_rish,datatype='*'
-;
-
-t_name='* datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ltr_rish,datatype = '*'
-;;	print, '%%%'
-;;	tplot_names
-;;	print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
-
-  if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
-                  'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
-                  'iug_ltr_sgk_pwr4 iug_ltr_sgk_pwr5 iug_ltr_sgk_wdt1 '+$
-                  'iug_ltr_sgk_wdt2 iug_ltr_sgk_wdt3 iug_ltr_sgk_wdt4 '+$
-                  'iug_ltr_sgk_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;10 array datatype
-;
-; iug_load_ltr_rish,datatype = ['troposphere']
-;
-
-t_name='array datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ltr_rish,datatype = ['troposphere']
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
-
-  if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
-                  'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
-                  'iug_ltr_sgk_pwr4 iug_ltr_sgk_pwr5 iug_ltr_sgk_wdt1 '+$
-                  'iug_ltr_sgk_wdt2 iug_ltr_sgk_wdt3 iug_ltr_sgk_wdt4 '+$
-                  'iug_ltr_sgk_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;11 single parameter
+;7 single parameter
 ;
 ; iug_load_ltr_rish,parameter = 'uwnd'
 ;
@@ -464,7 +315,7 @@ del_data,'*'
 
 
 ;
-;12 multi parameters string
+;8 multi parameters string
 ;
 ; iug_load_ltr_rish,parameter = 'uwnd vwnd'
 ;
@@ -496,7 +347,7 @@ del_data,'*'
 
 
 ;
-;13 multi parameters array
+;9 multi parameters array
 ;
 ; iug_load_ltr_rish,parameter = ['uwnd', 'pwr1', 'wdt1']
 ;
@@ -529,7 +380,7 @@ del_data,'*'
 
 
 ;
-;14 caps parameter
+;10 caps parameter
 ;
 ; iug_load_ltr_rish,parameter='UWND'
 ;
@@ -562,7 +413,7 @@ del_data,'*'
 
 
 ;
-;15 * parameter
+;11 * parameter
 ;
 ; iug_load_ltr_rish,parameter='*'
 ;
@@ -598,7 +449,7 @@ del_data,'*'
 
 
 ;
-;16 all parameter
+;12 all parameter
 ;
 ; iug_load_ltr_rish,parameter= 'all'
 ;
@@ -634,7 +485,7 @@ del_data,'*'
 
 
 ;
-;17 verbose
+;13 verbose
 ;
 ;iug_load_ltr_rish,site='sgk',/verbose
 ;
@@ -656,7 +507,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;18 /downloadonly
+;14 /downloadonly
 ;
 ;  iug_load_ltr_rish,site='sgk',/downloadonly
 ;

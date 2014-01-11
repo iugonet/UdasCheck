@@ -26,55 +26,39 @@
 ;
 ; iug_load_wpr_rish,site='*'
 ;
-;8 single datatype
-;
-; iug_load_wpr_rish,datatype='troposphere'
-;
-;9 caps datatype
-;
-; iug_load_wpr_rish,datatype='TROPOSPHERE'
-;
-;10 * datatype
-;
-; iug_load_wpr_rish,datatype='*'
-;
-;11 array datatype
-;
-; iug_load_wpr_rish,datatype=['troposphere']
-;
-;12 single parameter
+;8 single parameter
 ;
 ; iug_load_wpr_rish,parameter='uwnd'
 ;
-;13 multi parameters string
+;9 multi parameters string
 ;
 ; iug_load_wpr_rish,site = 'uwnd vwnd'
 ;
-;14 multi parameters array
+;10 multi parameters array
 ;
 ; iug_load_wpr_rish,site = ['uwnd', 'pwr1', 'wdt1']
 ;
-;15 caps parameter
+;11 caps parameter
 ;
 ; iug_load_wpr_rish,parameter='UWND'
 ;
-;16 * parameter
+;12 * parameter
 ;
 ; iug_load_wpr_rish,parameter='*'
 ;
-;17 array parameter
+;13 array parameter
 ;
 ; iug_load_wpr_rish,parameter=['uwnd']
 ; 
-;18 all parameter
+;14 all parameter
 ;
 ; iug_load_wpr_rish,parameter='all'
 ; 
-;19 verbose
+;15 verbose
 ;
 ; iug_load_wpr_rish,site='bik',/verbose
 ;
-;20 /downloadonly
+;16 /downloadonly
 ;
 ; iug_load_wpr_rish,site='bik',/downloadonly
 ;
@@ -82,7 +66,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2013-03-04 (04 Mar 2013) $
-; $LastChangedRevision: 2013-03-04 (04 Mar 2013) $
+; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
 ; $URL: $
 ;-
 
@@ -320,132 +304,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;8 single datatype
-;
-; iug_load_wpr_rish, datatype = 'troposphere'
-;
-
-t_name='single datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_wpr_rish, datatype = 'troposphere'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_wpr_bik rish_wpr_mnd rish_wpr_mnd rish_wpr_pon rish_wpr_sgk'
-
-  if ~data_exists('iug_wpr_bik_* iug_wpr_mnd_* iug_wpr_pon_* '+$
-                  'iug_wpr_sgk_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-  
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;9 caps datatype
-;
-; iug_load_wpr_rish,datatype='TROPOSPHERE'
-;
-
-t_name='caps datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_wpr_rish,datatype='TROPOSPHERE'
-  print, tnames('*')
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_wpr_bik rish_wpr_mnd rish_wpr_mnd rish_wpr_pon rish_wpr_sgk'
-
-  if ~data_exists('iug_wpr_bik_* iug_wpr_mnd_* iug_wpr_pon_* '+$
-                  'iug_wpr_sgk_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-  
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;10 * datatype
-;
-; iug_load_wpr_rish,datatype='*'
-;
-
-t_name='* datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_wpr_rish,datatype = '*'
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_wpr_bik rish_wpr_mnd rish_wpr_mnd rish_wpr_pon rish_wpr_sgk'
-
-  if ~data_exists('iug_wpr_bik_* iug_wpr_mnd_* iug_wpr_pon_* '+$
-                  'iug_wpr_sgk_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-  
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;11 array datatype
-;
-; iug_load_wpr_rish,datatype = ['troposphere']
-;
-
-t_name='array datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_wpr_rish,datatype = ['troposphere']
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_wpr_bik rish_wpr_mnd rish_wpr_mnd rish_wpr_pon rish_wpr_sgk'
-
-  if ~data_exists('iug_wpr_bik_* iug_wpr_mnd_* iug_wpr_pon_* '+$
-                  'iug_wpr_sgk_* ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;12 single parameter
+;8 single parameter
 ;
 ; iug_load_wpr_rish,parameter = 'uwnd'
 ;
@@ -477,7 +336,7 @@ del_data,'*'
 
 
 ;
-;13 multi parameters string
+;9 multi parameters string
 ;
 ; iug_load_wpr_rish,parameter = 'uwnd vwnd'
 ;
@@ -509,7 +368,7 @@ del_data,'*'
 
 
 ;
-;14 multi parameters array
+;10 multi parameters array
 ;
 ; iug_load_wpr_rish,parameter = ['uwnd', 'pwr1', 'wdt1']
 ;
@@ -542,7 +401,7 @@ del_data,'*'
 
 
 ;
-;15 caps parameter
+;11 caps parameter
 ;
 ; iug_load_wpr_rish,parameter='UWND'
 ;
@@ -573,9 +432,8 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 
-
 ;
-;16 * parameter
+;12 * parameter
 ;
 ; iug_load_wpr_rish,parameter='UWND'
 ;
@@ -610,7 +468,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;17 array parameter
+;13 array parameter
 ;
 ; iug_load_wpr_rish,parameter=['uwnd', 'vwnd', 'wwnd']
 ;
@@ -642,7 +500,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;18 all parameter
+;14 all parameter
 ;
 ; iug_load_wpr_rish,parameter= 'all'
 ;
@@ -678,7 +536,7 @@ del_data,'*'
 
 
 ;
-;19 verbose
+;15 verbose
 ;
 ;iug_load_wpr_rish,site='bik',/verbose
 ;
@@ -700,7 +558,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;20 /downloadonly
+;16 /downloadonly
 ;
 ;  iug_load_wpr_rish,site='bik',/downloadonly
 ;

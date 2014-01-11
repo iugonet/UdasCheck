@@ -26,27 +26,11 @@
 ;
 ; iug_load_aws_rish,site='*'
 ;
-;8 single datatype
-;
-; iug_load_aws_rish,datatype='troposphere'
-;
-;9 caps datatype
-;
-; iug_load_aws_rish,datatype='TROPOSPHERE'
-;
-;10 * datatype
-;
-; iug_load_aws_rish,datatype='*'
-;
-;11 array datatype
-;
-; iug_load_aws_rish,datatype=['troposphere']
-;
-;12 verbose
+;8 verbose
 ;
 ; iug_load_wpr_rish,site='bik',/verbose
 ;
-;13 /downloadonly
+;9 /downloadonly
 ;
 ; iug_load_wpr_rish,site='bik',/downloadonly
 ;
@@ -54,7 +38,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2013-03-04 (04 Mar 2013) $
-; $LastChangedRevision: 2013-03-04 (04 Mar 2013) $
+; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
 ; $URL: $
 ;-
 
@@ -284,130 +268,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;8 single datatype
-;
-; iug_load_aws_rish, datatype = 'troposphere'
-;
-
-t_name='single datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_aws_rish, datatype = 'troposphere'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_aws_bik rish_aws_mnd rish_aws_mnd rish_aws_pon rish_aws_sgk'
-
-  if ~data_exists('iug_aws_bik_* iug_aws_mnd_* iug_aws_pon_* '+$
-                  'iug_aws_sgk_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-  
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;9 caps datatype
-;
-; iug_load_aws_rish,datatype='TROPOSPHERE'
-;
-
-t_name='caps datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_aws_rish,datatype='TROPOSPHERE'
-  print, tnames('*')
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_aws_bik rish_aws_mnd rish_aws_mnd rish_aws_pon rish_aws_sgk'
-
-  if ~data_exists('iug_aws_bik_* iug_aws_mnd_* iug_aws_pon_* '+$
-                  'iug_aws_sgk_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-  
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;10 * datatype
-;
-; iug_load_wpr_rish,datatype='*'
-;
-
-t_name='* datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_aws_rish,datatype = '*'
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_aws_bik rish_aws_mnd rish_aws_mnd rish_aws_pon rish_aws_sgk'
-
-  if ~data_exists('iug_aws_bik_* iug_aws_mnd_* iug_aws_pon_* '+$
-                  'iug_aws_sgk_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-  
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;11 array datatype
-;
-; iug_load_aws_rish,datatype = ['troposphere']
-;
-
-t_name='array datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_aws_rish,datatype = ['troposphere']
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_aws_bik rish_aws_mnd rish_aws_mnd rish_aws_pon rish_aws_sgk'
-
-  if ~data_exists('iug_aws_bik_* iug_aws_mnd_* iug_aws_pon_* '+$
-                  'iug_aws_sgk_* ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;12 verbose
+;8 verbose
 ;
 ;iug_load_aws_rish,site='bik',/verbose
 ;
@@ -429,7 +290,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;20 /downloadonly
+;9 /downloadonly
 ;
 ;  iug_load_aws_rish,site='bik',/downloadonly
 ;

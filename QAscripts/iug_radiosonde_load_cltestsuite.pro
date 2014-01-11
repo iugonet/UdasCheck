@@ -62,7 +62,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2013-05-30 (30 May 2013) $
-; $LastChangedRevision: 213 $
+; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
 ; $URL: $
 ;-
 
@@ -522,7 +522,7 @@ del_data,'*'
 ;
 ;14 verbose
 ;
-;iug_load_meteor_rish,site='ktb',/verbose
+;iug_load_radiosonde_rish, site ='drw',/verbose
 ;
 
 t_name='verbose'

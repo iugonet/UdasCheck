@@ -26,55 +26,39 @@
 ;
 ; iug_load_blr_rish,site='*'
 ;
-;8 single datatype
-;
-; iug_load_blr_rish,datatype='troposphere'
-;
-;9 caps datatype
-;
-; iug_load_blr_rish,datatype='TROPOSPHERE'
-;
-;10 * datatype
-;
-; iug_load_blr_rish,datatype='*'
-;
-;11 array datatype
-;
-; iug_load_blr_rish,datatype=['troposphere']
-;
-;12 single parameter
+;8 single parameter
 ;
 ; iug_load_blr_rish,parameter='uwnd'
 ;
-;13 multi parameters string
+;9 multi parameters string
 ;
 ; iug_load_blr_rish,site = 'uwnd vwnd'
 ;
-;14 multi parameters array
+;10 multi parameters array
 ;
 ; iug_load_blr_rish,site = ['uwnd', 'pwr1', 'wdt1']
 ;
-;15 caps parameter
+;11 caps parameter
 ;
 ; iug_load_blr_rish,parameter='UWND'
 ;
-;16 * parameter
+;12 * parameter
 ;
 ; iug_load_blr_rish,parameter='*'
 ;
-;17 array parameter
+;13 array parameter
 ;
 ; iug_load_blr_rish,parameter=['uwnd']
 ; 
-;18 all parameter
+;14 all parameter
 ;
 ; iug_load_blr_rish,parameter='all'
 ; 
-;19 verbose
+;15 verbose
 ;
 ; iug_load_blr_rish,site='ktb',/verbose
 ;
-;20 /downloadonly
+;16 /downloadonly
 ;
 ; iug_load_blr_rish,site='ktb',/downloadonly
 ;
@@ -82,7 +66,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2011-10-22 (22 Oct 2011) $
-; $LastChangedRevision: 2011-12-26 (26 Dec 2011) $
+; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
 ; $URL: $
 ;-
 
@@ -100,7 +84,7 @@ thm_init
 ;	*** set time span ***
 qa_timespan = strarr(2,2)
 
-qa_timespan[0,*] = [ '2006-03-01', '2006-03-02']
+qa_timespan[0,*] = [ '2010-08-12', '2010-08-13']
 
 qa_timespan[1,*] = [ '2011-07-29', '2011-07-30']
 
@@ -123,13 +107,16 @@ if err eq 0 then begin
   iug_load_blr_rish
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -228,8 +215,11 @@ if err eq 0 then begin
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+    then message,'invalid load'
   
 endif
 
@@ -292,8 +282,11 @@ if err eq 0 then begin
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+    then message,'invalid load'
 
 endif
 
@@ -324,8 +317,12 @@ if err eq 0 then begin
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+    then message,'invalid load'
+    
 endif
 
 catch,/cancel
@@ -335,141 +332,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;8 single datatype
-;
-; iug_load_blr_rish_txt, datatype = 'troposphere'
-;
-
-t_name='single datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_blr_rish, datatype = 'troposphere'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
-
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
-                  'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
-                  'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
-                  'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;9 caps datatype
-;
-; iug_load_blr_rish,datatype='TROPOSPHERE'
-;
-
-t_name='caps datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_blr_rish, datatype = 'TROPOSPHERE'
-	print, tnames('*')
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk rish_blr_srp'
-
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
-                  'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
-                  'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
-                  'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;10 * datatype
-;
-; iug_load_blr_rish,datatype='*'
-;
-
-t_name='* datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_blr_rish,datatype = '*'
-;;	print, '%%%'
-;;	tplot_names
-;;	print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk rish_blr_srp'
-
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
-                  'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
-                  'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
-                  'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;11 array datatype
-;
-; iug_load_blr_rish,datatype = ['troposphere']
-;
-
-t_name='array datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_blr_rish,datatype = ['troposphere']
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk rish_blr_srp'
-
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
-                  'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
-                  'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
-                  'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;12 single parameter
+;8 single parameter
 ;
 ; iug_load_blr_rish,parameter = 'uwnd'
 ;
@@ -486,9 +349,9 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
 
-  if ~data_exists('iug_blr_ktb_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_srp_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
 endif
@@ -501,7 +364,7 @@ del_data,'*'
 
 
 ;
-;13 multi parameters string
+;9 multi parameters string
 ;
 ; iug_load_blr_rish,parameter = 'uwnd vwnd'
 ;
@@ -518,9 +381,10 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
 
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_srp_uwnd '+$
+                  'iug_blr_srp_vwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
 endif
@@ -533,7 +397,7 @@ del_data,'*'
 
 
 ;
-;14 multi parameters array
+;10 multi parameters array
 ;
 ; iug_load_blr_rish,parameter = ['uwnd', 'pwr1', 'wdt1']
 ;
@@ -550,9 +414,10 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
 
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_pwr1 iug_blr_ktb_wdt1'$
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_pwr1 iug_blr_ktb_wdt1 '+$
+                  'iug_blr_srp_uwnd iug_blr_srp_pwr1 iug_blr_srp_wdt1' $
                   ,qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
@@ -566,7 +431,7 @@ del_data,'*'
 
 
 ;
-;15 caps parameter
+;11 caps parameter
 ;
 ; iug_load_blr_rish,parameter='UWND'
 ;
@@ -583,9 +448,9 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
 
-  if ~data_exists('iug_blr_ktb_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_srp_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
 endif
@@ -599,7 +464,7 @@ del_data,'*'
 
 
 ;
-;16 * parameter
+;12 * parameter
 ;
 ; iug_load_blr_rish,parameter='UWND'
 ;
@@ -616,14 +481,17 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+    then message,'invalid load'
 
 endif
 
@@ -634,7 +502,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;17 array parameter
+;13 array parameter
 ;
 ; iug_load_blr_rish,parameter=['uwnd', 'vwnd', 'wwnd']
 ;
@@ -651,11 +519,17 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_srp'
   
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd'$
-                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
+                  'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
+                  'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
+                  'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+    then message,'invalid load'
 
 endif
 
@@ -666,7 +540,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;18 all parameter
+;14 all parameter
 ;
 ; iug_load_blr_rish,parameter= 'all'
 ;
@@ -683,14 +557,17 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'rish_blr_ktb rish_blr_ktb'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
-  then message,'invalid load'
+                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
+                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
+                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
+                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+    then message,'invalid load'
 
 endif
 
@@ -702,7 +579,7 @@ del_data,'*'
 
 
 ;
-;19 verbose
+;15 verbose
 ;
 ;iug_load_blr_rish,site='ktb',/verbose
 ;
@@ -724,7 +601,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;20 /downloadonly
+;16 /downloadonly
 ;
 ;  iug_load_blr_rish,site='ktb',/downloadonly
 ;

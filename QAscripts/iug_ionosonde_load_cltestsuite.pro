@@ -22,38 +22,21 @@
 ;
 ; iug_load_ionosonde_rish,site='*'
 ;
-;7 single datatype
-;
-; iug_load_ionosonde_rish,datatype='troposphere'
-;
-;8 caps datatype
-;
-; iug_load_ionosonde_rish,datatype='TROPOSPHERE'
-;
-;9 * datatype
-;
-; iug_load_ionosonde_rish,datatype='*'
-;
-;10 array datatype
-;
-; iug_load_ionosonde_rish,datatype=['troposphere']
-;
-; 
-;11 verbose
+;7 verbose
 ;
 ; iug_load_ionosonde_rish,site='sgk',/verbose
 ;
-;12 /downloadonly
+;8 /downloadonly
 ;
 ; iug_load_ionosonde_rish,site='sgk',/downloadonly
 ;
-;13 /fixed_freq
+;9 /fixed_freq
 ;
 ; iug_load_ionosonde_rish,site='sgk',/fixed_freq
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2012-11-13 (13 Nov 2012) $
-; $LastChangedRevision: 2013-02-26 (26 Feb 2013) $
+; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
 ; $URL: $
 ;-
 
@@ -252,126 +235,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;7 single datatype
-;
-; iug_load_ionosonde_rish, datatype = 'troposphere'
-;
-
-t_name='single datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ionosonde_rish, datatype = 'troposphere'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
-
-  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
-    
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;8 caps datatype
-;
-; iug_load_ionosonde_rish,datatype='TROPOSPHERE'
-;
-
-t_name='caps datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ionosonde_rish, datatype = 'TROPOSPHERE'
-
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
-
-  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
-    
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;9 * datatype
-;
-; iug_load_ionosonde_rish,datatype='*'
-;
-
-t_name='* datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ionosonde_rish,datatype = '*'
-;;	print, '%%%'
-;;	tplot_names
-;;	print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
-
-  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;10 array datatype
-;
-; iug_load_ionosonde_rish,datatype = ['ionosphere']
-;
-
-t_name='array datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_ionosonde_rish,datatype = ['ionosphere']
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
-
-  if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;11 verbose
+;7 verbose
 ;
 ;iug_load_ionosonde_rish,site='sgk',/verbose
 ;
@@ -393,7 +257,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;12 /downloadonly
+;8 /downloadonly
 ;
 ;  iug_load_ionosonde_rish,site='sgk',/downloadonly
 ;
@@ -413,7 +277,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;13 /fixed_freq
+;9 /fixed_freq
 ;
 ;  iug_load_ionosonde_rish,site='sgk',/fixed_freq
 ;

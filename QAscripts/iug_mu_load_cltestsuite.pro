@@ -650,7 +650,7 @@ timespan,qa_timespan[qa_t,0],1,/day
 ;
 ;14 single parameter for meteor mode observarion
 ;
-; iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00'
+; iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00'
 ;
 
 t_name='single parameter'
@@ -659,7 +659,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00'
+  iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -682,7 +682,7 @@ del_data,'*'
 ;
 ;15 multi parameters string
 ;
-; iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00 h2t60min00'
+; iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00 h2t60min00'
 ;
 
 t_name='multi parameter string'
@@ -691,7 +691,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00 h2t60min00'
+  iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00 h2t60min00'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -716,7 +716,7 @@ del_data,'*'
 ;
 ;16 multi parameters array
 ;
-; iug_load_mu, datatype = 'meteor', parameter1 = ['h1t60min00','h2t60min00']
+; iug_load_mu, datatype = 'meteor', parameter = ['h1t60min00','h2t60min00']
 ;
 
 t_name='multi parameter array'
@@ -725,7 +725,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter1 = ['h1t60min00','h2t60min00']
+  iug_load_mu, datatype = 'meteor', parameter = ['h1t60min00','h2t60min00']
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -750,7 +750,7 @@ del_data,'*'
 ;
 ;17 caps parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter1 = 'H1T60MIN00'
+; iug_load_mu, datatype = 'meteor', parameter = 'H1T60MIN00'
 ;
 
 t_name='caps parameter'
@@ -759,7 +759,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter1 = 'H1T60MIN00'
+  iug_load_mu, datatype = 'meteor', parameter = 'H1T60MIN00'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -782,7 +782,7 @@ del_data,'*'
 ;
 ;18 load all parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter1 = 'all'
+; iug_load_mu, datatype = 'meteor', parameter = 'all'
 ;
 
 t_name='all parameter'
@@ -791,7 +791,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter1 = 'all'
+  iug_load_mu, datatype = 'meteor', parameter = 'all'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
@@ -819,7 +819,7 @@ del_data,'*'
 ;
 ;19 load * parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter1 = 'all'
+; iug_load_mu, datatype = 'meteor', parameter = '*'
 ; 
 
 t_name='* parameter'
@@ -828,7 +828,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter1 = 'all'
+  iug_load_mu, datatype = 'meteor', parameter = '*'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
