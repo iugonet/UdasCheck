@@ -33,7 +33,7 @@
 ;  iug_load_hf_tohokuu,/no_download
 ;
 ; $LastChangeBy: M. Yagi $
-; $LastChangeDate: 2013-01-09 $
+; $LastChangeDate: 2014-01-22 $
 ;
 ;-
 
@@ -62,9 +62,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu
 
-  print_tvar_info,'iug_iit_hf_rh'
+  print_tvar_info,'iug_iit_hf_R'
 
-  if ~data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
  
 endif
@@ -87,9 +87,9 @@ if err eq 0 then begin
  
   iug_load_hf_tohokuu,site='iit'
 
-  print_tvar_info, 'iug_iit_hf_rh'
+  print_tvar_info, 'iug_iit_hf_R'
   
-  if ~data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -112,9 +112,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,site=['iit']
 
-  print_tvar_info, 'iug_iit_hf_rh'
+  print_tvar_info, 'iug_iit_hf_R'
   
-  if ~data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -137,9 +137,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,site='IIT'
 
-  print_tvar_info, 'iug_iit_hf_rh'
+  print_tvar_info, 'iug_iit_hf_R'
   
-  if ~data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -162,9 +162,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,parameter='rh'
 
-  print_tvar_info, 'iug_iit_hf_rh'
+  print_tvar_info, 'iug_iit_hf_R'
   
-  if ~data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -187,9 +187,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,parameter='rh lh'
 
-  print_tvar_info, 'iug_iit_hf_rh iug_iit_hf_lh'
+  print_tvar_info, 'iug_iit_hf_R iug_iit_hf_L'
   
-  if ~data_exists('iug_iit_hf_rh iug_iit_hf_lh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R iug_iit_hf_L',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -212,9 +212,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,parameter=['rh','lh']
 
-  print_tvar_info, 'iug_iit_hf_rh iug_iit_hf_lh'
+  print_tvar_info, 'iug_iit_hf_R iug_iit_hf_L'
   
-  if ~data_exists('iug_iit_hf_rh iug_iit_hf_lh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R iug_iit_hf_L',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -237,9 +237,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,parameter='RH'
 
-  print_tvar_info, 'iug_iit_hf_rh'
+  print_tvar_info, 'iug_iit_hf_R'
   
-  if ~data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -262,9 +262,9 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,parameter='*'
 
-  print_tvar_info, 'iug_iit_hf_rh iug_iit_hf_lh'
+  print_tvar_info, 'iug_iit_hf_R iug_iit_hf_L'
   
-  if ~data_exists('iug_iit_hf_rh iug_iit_hf_lh',qa_timespan[0],qa_timespan[1]) $
+  if ~data_exists('iug_iit_hf_R iug_iit_hf_L',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
   
 endif
@@ -287,7 +287,7 @@ if err eq 0 then begin
 
   iug_load_hf_tohokuu,/downloadonly
  
-  if data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'invalid load'
 
 endif
@@ -312,7 +312,7 @@ catch,err
 if err eq 0 then begin
   iug_load_hf_tohokuu, /no_download
 
-  if data_exists('iug_iit_hf_rh',qa_timespan[0],qa_timespan[1]) $
+  if data_exists('iug_iit_hf_R',qa_timespan[0],qa_timespan[1]) $
   then message, 'Unexpected data in temporary directory'+root_data_dir()
 
 endif

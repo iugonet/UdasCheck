@@ -15,7 +15,7 @@
 ;
 ; $WrittenBy: M. Yoneda $
 ; $LastChangedBy: M. Yagi $
-; $LastChangedDate: (20 Feb, 2013) $
+; $LastChangedDate: (22 Jan, 2014) $
 ;-
 
 
@@ -87,7 +87,7 @@ if err eq 0 then begin
   
   if err eq 0 then begin
   
-   iug_load_iprt,site='iit'
+   iug_load_iprt
    
    print_tvar_info,'iprt_sun_L iprt_sun_R'
    
@@ -111,7 +111,7 @@ t_name='All polarization components'
   
   if err eq 0 then begin
   
-   iug_load_iprt,site='iit'
+   iug_load_iprt
    
    print_tvar_info,'iprt_sun_*'
    
@@ -134,7 +134,7 @@ t_name='datatype'
   
   if err eq 0 then begin
   
-   iug_load_iprt,site ='iit',datatype='Sun'
+   iug_load_iprt,datatype='Sun'
    
    print_tvar_info,'Sun'
    
@@ -182,7 +182,7 @@ del_data,'*'
 t_name = '/downloadonly'
 catch,err
 if err eq 0 then begin
- iug_load_iprt, site = 'iit',/downloadonly
+ iug_load_iprt, /downloadonly
   if data_exists('iug_sun_*', qa_timespan[0],qa_timespan[1]) $ 
   then message,'invalid load'
   
