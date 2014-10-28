@@ -8,11 +8,12 @@
 ;        .run iug_crib_lfrto
 ;
 ; Written by: M. Yagi, Jan 20, 2013 
-; Last Update: M. Yagi, Feb 20, 2013
+; Last Update: M. Yagi, Jan 22, 2014
 ;-
 
 ;Initialize
 thm_init 
+time_stamp, /off
 
 ;Specify the time span.
 timespan, '2004-01-09'
@@ -24,16 +25,17 @@ iug_load_hf_tohokuu
 tplot_names
 
 ; Plot the loaded data
-tplot,['iug_iit_hf_rh','iug_iit_hf_lh']
+tplot,['iug_iit_hf_R','iug_iit_hf_L']
 
 ; Stop
 print,'Enter ".c" to continue.'
-; stop
 
 makepng, 'iug_crib_hf_tohokuu_001'
 
+; stop
+
 ; Plot the loaded data with 'trange' option
-tplot,['iug_iit_hf_rh','iug_iit_hf_lh'],trange=['2004-01-09/22:00:00','2004-01-09/23:00:00']
+tplot,['iug_iit_hf_R','iug_iit_hf_L'],trange=['2004-01-09/22:00:00','2004-01-09/23:00:00']
 
 makepng, 'iug_crib_hf_tohokuu_002'
 

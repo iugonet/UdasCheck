@@ -1,10 +1,10 @@
 ;+
-; PROCEDURE: IUG_CRIB_GMAG_NIPR
-;    A sample crib sheet that explains how to use the "iug_load_gmag_nipr" 
+; PROCEDURE: IUG_CRIB_ASI_NIPR
+;    A sample crib sheet that explains how to use the "iug_load_asi_nipr" 
 ;    procedure. You can run this crib sheet by copying & pasting each 
 ;    command below (except for stop and end) into the IDL command line. 
 ;    Or alternatively compile and run using the command:
-;        .run iug_crib_gmag_nipr
+;        .run iug_crib_asi_nipr
 ;
 ; NOTE: See the rules of the road.
 ;       For more information, see:
@@ -17,37 +17,28 @@
 
 ; Initialize
 thm_init
-time_stamp, /off
 
-; Set the date and duration (in days)
-timespan, '2003-10-29'
+; Set the date and duration (in minute)
+timespan, '2012-01-22/20:30', /min, 30
 
 ; Load NIPR data
-iug_load_gmag_nipr,site=['syo','hus','tjo']
+iug_load_asi_nipr,site='hus', wavelength='0000'
 
 ; View the loaded data names
 tplot_names
 
 ; Plot the loaded data
-tplot,'nipr_mag_*'
+tplot, 'nipr_asi_hus_0000'
+
+makepng, 'iug_crib_asi_nipr_001'
 
 ; Stop
-print,'Enter ".c" to continue.'
-; stop
-makepng, 'iug_crib_gmag_nipr_001'
+;print,'Enter ".c" to continue.'
+;stop
 
-; Set new timespan
-timespan,'2003-10-29/06:00:00',4,/hours
+; Show 2D image
+;window,1,xsize=480,ysize=480
+;ctime,/cut
 
-; Set y-axis
-ylim,'nipr_mag_*',-4000,2000
-
-; Set title
-; tplot_options, 'title', 'Sample plot of NIPR magnetometer data'
-
-; Plot
-tplot
-
-makepng, 'iug_crib_gmag_nipr_002'
 
 end

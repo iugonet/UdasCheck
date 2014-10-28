@@ -32,11 +32,12 @@ iug_load_ear, datatype = 'e_region',  parameter = 'eb3p4b'
 
 ;Plot time-height distribution of radial Doppler velocity and echo intensity for beam 1:
 ;=======================================================================================
+zlim,'iug_ear_faieb3p4b_dpl*',-100,100
 tplot,['iug_ear_faieb3p4b_dpl1','iug_ear_faieb3p4b_pwr1','iug_ear_faieb3p4b_wdt1','iug_ear_faieb3p4b_pn1']
 
-makepng, 'iug_crib_ear_001'
+makepng, 'iug_crib_ear_rish_001'
 
-;stop
+; stop
 
 ;Substract the average data of radial Doppler velocity, echo intensity, spectral width and noise level for beam 1:
 ;=================================================================================================================
@@ -46,9 +47,9 @@ tsub_average,'iug_ear_faieb3p4b_wdt1'
 tsub_average,'iug_ear_faieb3p4b_pn1'
 tplot,['iug_ear_faieb3p4b_dpl1-d','iug_ear_faieb3p4b_pwr1-d','iug_ear_faieb3p4b_wdt1-d','iug_ear_faieb3p4b_pn1-d']
 
-makepng, 'iug_crib_ear_002'
+makepng, 'iug_crib_ear_rish_002'
 
-;stop
+; stop
 
 ;1-hour running average  of radial Doppler velocity, echo intensity, spectral width and noise level for beam 1:
 ;==============================================================================================================
@@ -59,9 +60,9 @@ tsmooth_in_time, 'iug_ear_faieb3p4b_pn1', 600
 
 tplot, ['iug_ear_faieb3p4b_dpl1_smoothed','iug_ear_faieb3p4b_pwr1_smoothed','iug_ear_faieb3p4b_wdt1_smoothed','iug_ear_faieb3p4b_pn1_smoothed']
 
-makepng, 'iug_crib_ear_003'
+makepng, 'iug_crib_ear_rish_003'
 
-;stop
+; stop
 
 ;Load all the standard observation data of the troposphere and stratosphere 
 ;taken by the EAR in timespan:
@@ -83,16 +84,16 @@ iug_load_ear, datatype = 'troposphere'
 ;========================================================================================
 tplot,['iug_ear_trop_uwnd','iug_ear_trop_vwnd','iug_ear_trop_wwnd']
 
-makepng, 'iug_crib_ear_004'
+makepng, 'iug_crib_ear_rish_004'
 
-;stop
+; stop
 
 ; Set up the plot time range of EAR data in the ionosphere and troposphere:
 ;==========================================================================
 tlimit, '2005-08-24 11:00:00', '2005-08-25 00:00:00'
 tplot
 
-makepng, 'iug_crib_ear_005'
+makepng, 'iug_crib_ear_rish_005'
 
 end
 

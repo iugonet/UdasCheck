@@ -1,0 +1,25 @@
+Result from QA scripts
+
+iug_ask_nipr_load_cltestsuite.pro
+-------------------------------------
+Begin Error Report
+
+Test 1 Succeeded: basic
+Test 2 Succeeded: single site
+Test 3 Succeeded: multi site string
+Test 4 Succeeded: multi sites array
+Test 5 Succeeded: caps site
+Test 6 Succeeded: all sites
+Test 7 Succeeded: *
+Test 8 Succeeded: single wavelength
+Test 9 Succeeded: * wavelength
+Test 10 Succeeded: array wavelength
+Test 11 Succeeded: verbose
+Test 12 Succeeded: /downloadonly
+Test 13 Succeeded: /no_download
+-------------------------------------
+End Error Report
+
+
+
+
