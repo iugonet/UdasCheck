@@ -11,8 +11,9 @@
 ;-
 
 ;Initializes system variables for themis:
-;=========================================
+;=========================================
 thm_init
+time_stamp, /off
 
 ;**********************
 ;DAWEX radiosonde data:

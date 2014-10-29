@@ -17,6 +17,7 @@
 
 ; Initialize
 thm_init
+time_stamp, /off
 
 ; Set the date and duration (in minute)
 timespan, '2012-01-22/20:30', /min, 30
