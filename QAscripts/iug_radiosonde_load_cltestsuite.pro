@@ -320,7 +320,7 @@ del_data,'*'
 ; iug_load_radiosonde_rish, site = 'drw gpn'
 ;
 
-t_name='single site'
+t_name='multi sites string'
 
 catch,err
 
