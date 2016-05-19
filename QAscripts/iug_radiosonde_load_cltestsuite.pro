@@ -80,14 +80,14 @@ thm_init
 ; *** set time span ***
 qa_timespan = strarr(2,2)
 
-qa_timespan[0,*] = [ '2001-10-12', '2001-10-19']
+qa_timespan[0,*] = [ '2001-11-15', '2001-11-16']
 
-qa_timespan[1,*] = [ '2001-12-13', '2001-12-19']
+qa_timespan[1,*] = [ '2001-11-16', '2001-11-17']
 
 qa_t = 0
 ;;qa_t = 1
 
-timespan,qa_timespan[qa_t,0],2,/day
+timespan,qa_timespan[qa_t,0],1,/day
 
 del_data,'*'
 
@@ -105,13 +105,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -139,12 +133,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -172,13 +161,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -192,7 +175,7 @@ del_data,'*'
 ;
 ;4 multi datatypes array
 ;
-; iug_load_meteor_rish,site = ['bik','ktb','sgk','srp']
+; iug_load_radiosonde_rish, datatype = ['dawex','misc']
 ;
 
 t_name='multi datatypes array'
@@ -209,13 +192,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
   
 endif
@@ -243,12 +220,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -276,13 +248,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -296,7 +262,7 @@ del_data,'*'
 ;
 ;7 load * datatypes
 ;
-; iug_load_meteor_rish, site='*'
+; iug_load_radiosonde_rish, datatype = '*'
 ;
 
 t_name='* datatypes'
@@ -310,13 +276,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
     
 endif
@@ -344,8 +304,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 endif
 
@@ -372,10 +331,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 endif
 
@@ -402,10 +358,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 endif
 
@@ -432,8 +385,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 endif
 
@@ -463,13 +415,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh ', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -501,13 +447,7 @@ if err eq 0 then begin
 ;just spot checking cause there are a lot of data types
   print_tvar_info,'rish_radiosonde'
 
-  if ~data_exists('iug_radiosonde_drw_press iug_radiosonde_drw_temp iug_radiosonde_drw_rh '+$
-                  'iug_radiosonde_drw_uwnd iug_radiosonde_drw_vwnd iug_radiosonde_drw_dewp '+$
-                  'iug_radiosonde_gpn_press iug_radiosonde_gpn_temp iug_radiosonde_gpn_rh '+$
-                  'iug_radiosonde_gpn_uwnd iug_radiosonde_gpn_vwnd iug_radiosonde_gpn_dewp '+$
-                  'iug_radiosonde_ktr_press iug_radiosonde_ktr_temp iug_radiosonde_ktr_rh '+$
-                  'iug_radiosonde_ktr_uwnd iug_radiosonde_ktr_vwnd iug_radiosonde_ktr_dewp '+$
-                  'iug_radiosonde_sgk_press iug_radiosonde_sgk_temp iug_radiosonde_sgk_rh', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if ~data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -544,15 +484,15 @@ del_data,'*'
 ;
 ;20 /downloadonly
 ;
-;  iug_load_radiosonde_rish, site ='drw',/downloadonly
+;  iug_load_radiosonde_rish, /downloadonly
 ;
 
 t_name = '/downloadonly'
 catch,err
 if err eq 0 then begin
-  iug_load_radiosonde_rish, site ='drw',/downloadonly
+  iug_load_radiosonde_rish,/downloadonly
 
-  if data_exists('iug_radiosonde_drw_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if data_exists('iug_radiosonde_drw_* iug_radiosonde_gpn_* iug_radiosonde_ktr_* iug_radiosonde_ktb_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
