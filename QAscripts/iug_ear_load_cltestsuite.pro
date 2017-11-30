@@ -70,7 +70,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2011-11-08 (08 Nov 2011) $
-; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
+; $LastChangedRevision: 213 $
 ; $URL: $
 ;-
 
@@ -111,7 +111,7 @@ if err eq 0 then begin
   iug_load_ear
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_trop_nc ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -145,7 +145,7 @@ if err eq 0 then begin
   iug_load_ear, datatype = 'troposphere'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_trop_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -174,7 +174,7 @@ if err eq 0 then begin
   iug_load_ear, datatype = 'troposphere e_region'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_trop_nc ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -206,7 +206,7 @@ if err eq 0 then begin
   iug_load_ear, datatype = ['troposphere','e_region','f_region']
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_trop_nc ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -240,7 +240,7 @@ if err eq 0 then begin
 	print, tnames('*')
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_trop_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -274,7 +274,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_trop_nc ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -311,7 +311,7 @@ if err eq 0 then begin
 ;;	print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_trop_nc ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -343,7 +343,7 @@ if err eq 0 then begin
   print, tnames('*')
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_trop_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_trop_uwnd iug_ear_trop_vwnd iug_ear_trop_wwnd iug_ear_trop_pwr1 iug_ear_trop_pwr2 iug_ear_trop_pwr3 iug_ear_trop_pwr4 '+$
                   'iug_ear_trop_pwr5 iug_ear_trop_wdt1 iug_ear_trop_wdt2 iug_ear_trop_wdt3 iug_ear_trop_wdt4 iug_ear_trop_wdt5 iug_ear_trop_pn1 '+$
@@ -377,7 +377,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$
@@ -408,7 +408,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$
@@ -439,7 +439,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$
@@ -471,7 +471,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$
@@ -502,7 +502,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$
@@ -533,7 +533,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$
@@ -564,7 +564,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'ear_fai_nc'
+  print_tvar_info,'iug_ear_*'
 
   if ~data_exists('iug_ear_faieb3p4b_pwr1 iug_ear_faieb3p4b_pwr2 iug_ear_faieb3p4b_pwr3 '+$
                   'iug_ear_faieb3p4b_wdt1 iug_ear_faieb3p4b_wdt2 iug_ear_faieb3p4b_wdt3 iug_ear_faieb3p4b_dpl1 '+$

@@ -62,7 +62,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2011-10-22 (22 Oct 2011) $
-; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
+; $LastChangedRevision: 2017-11-29 (29 Nov 2017) $
 ; $URL: $
 ;-
 
@@ -87,7 +87,7 @@ qa_timespan[1,*] = [ '2005-07-29', '2005-07-30']
 qa_t = 0
 ;;qa_t = 1
 
-timespan,qa_timespan[qa_t,0],1,/hour
+timespan,qa_timespan[qa_t,0],1
 
 del_data,'*'
 
@@ -103,7 +103,7 @@ if err eq 0 then begin
   iug_load_ltr_rish
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -135,7 +135,7 @@ if err eq 0 then begin
   iug_load_ltr_rish,site='sgk'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -170,7 +170,7 @@ if err eq 0 then begin
 ;;	print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -202,7 +202,7 @@ if err eq 0 then begin
   iug_load_ltr_rish,site='SGK'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -234,7 +234,7 @@ if err eq 0 then begin
   iug_load_ltr_rish,site = 'all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -266,7 +266,7 @@ if err eq 0 then begin
   iug_load_ltr_rish, site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -300,7 +300,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
@@ -332,7 +332,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
@@ -364,7 +364,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_pwr1 iug_ltr_sgk_wdt1'$
                   ,qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
@@ -397,7 +397,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
@@ -430,7 +430,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$
@@ -466,7 +466,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ltr_sgk'
+  print_tvar_info,'iug_ltr_*'
 
   if ~data_exists('iug_ltr_sgk_uwnd iug_ltr_sgk_vwnd iug_ltr_sgk_wwnd '+$
                   'iug_ltr_sgk_pwr1 iug_ltr_sgk_pwr2 iug_ltr_sgk_pwr3 '+$

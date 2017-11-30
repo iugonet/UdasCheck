@@ -157,7 +157,7 @@ if err eq 0 then begin
   iug_load_meteor_rish,site='ktb'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -191,7 +191,7 @@ if err eq 0 then begin
    iug_load_meteor_rish,site = 'bik ktb sgk srp'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -228,7 +228,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -262,7 +262,7 @@ if err eq 0 then begin
   iug_load_meteor_rish,site='KTB'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -296,7 +296,7 @@ if err eq 0 then begin
   iug_load_meteor_rish,site = 'all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -330,7 +330,7 @@ if err eq 0 then begin
   iug_load_meteor_rish, site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -366,7 +366,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
@@ -399,7 +399,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -437,7 +437,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -475,7 +475,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
@@ -509,7 +509,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -546,7 +546,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$
@@ -583,7 +583,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_meteor_ktb_nc'
+  print_tvar_info,'iug_meteor_*'
 
   if ~data_exists('iug_meteor_ktb_uwnd_h2t60min00 iug_meteor_ktb_vwnd_h2t60min00 iug_meteor_ktb_uwndsig_h2t60min00 '+$
                   'iug_meteor_ktb_vwndsig_h2t60min00 iug_meteor_ktb_mwnum_h2t60min00 iug_meteor_ktb_uwnd_h2t60min30 '+$

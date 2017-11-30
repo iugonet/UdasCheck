@@ -36,7 +36,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2012-11-13 (13 Nov 2012) $
-; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
+; $LastChangedRevision: 2013-02-26 (26 Feb 2013) $
 ; $URL: $
 ;-
 
@@ -54,7 +54,7 @@ thm_init
 ;	*** set time span ***
 qa_timespan = strarr(2,2)
 
-qa_timespan[0,*] = ['2011-06-01 00:00', '2011-06-02 00:00']
+qa_timespan[0,*] = ['2011-05-31', '2011-06-01']
 
 qa_timespan[1,*] = ['2005-07-29', '2005-07-30']
 
@@ -63,7 +63,6 @@ qa_t = 0
 
 timespan,qa_timespan[qa_t,0],1,/hour
 
-qa_timespan[0,*] = ['2011-06-01 00:00', '2011-06-01 23:59']
 
 del_data,'*'
 
@@ -79,10 +78,11 @@ if err eq 0 then begin
   iug_load_ionosonde_rish
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
+  print_tvar_info,'iug_ionosonde_sgk_ionogram'
 
   if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
+
 endif
 
 catch,/cancel
@@ -106,7 +106,7 @@ if err eq 0 then begin
   iug_load_ionosonde_rish,site='sgk'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
+  print_tvar_info,'iug_ionosonde_sgk_ionogram'
 
   if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -137,7 +137,7 @@ if err eq 0 then begin
 ;;	print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
+  print_tvar_info,'iug_ionosonde_sgk_ionogram'
 
   if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -165,7 +165,7 @@ if err eq 0 then begin
   iug_load_ionosonde_rish,site='SGK'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
+  print_tvar_info,'iug_ionosonde_sgk_ionogram'
 
   if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -193,7 +193,7 @@ if err eq 0 then begin
   iug_load_ionosonde_rish,site = 'all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
+  print_tvar_info,'iug_ionosonde_sgk_ionogram'
 
   if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -221,7 +221,7 @@ if err eq 0 then begin
   iug_load_ionosonde_rish, site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_ionosonde_sgk'
+  print_tvar_info,'iug_ionosonde_sgk_ionogram'
 
   if ~data_exists('iug_ionosonde_sgk_ionogram',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
@@ -287,13 +287,12 @@ catch,err
 if err eq 0 then begin
   iug_load_ionosonde_rish,site='sgk',/fixed_freq
 
-  if ~data_exists('iug_ionosonde_sgk_freq_2MHz iug_ionosonde_sgk_freq_3MHz iug_ionosonde_sgk_freq_4MHz iug_ionosonde_sgk_freq_5MHz '+$
-                 'iug_ionosonde_sgk_freq_6MHz iug_ionosonde_sgk_freq_7MHz iug_ionosonde_sgk_freq_8MHz iug_ionosonde_sgk_freq_9MHz '+$
-                 'iug_ionosonde_sgk_freq_10MHz iug_ionosonde_sgk_freq_11MHz iug_ionosonde_sgk_freq_12MHz iug_ionosonde_sgk_freq_13MHz '+$
-                 'iug_ionosonde_sgk_freq_14MHz iug_ionosonde_sgk_freq_15MHz iug_ionosonde_sgk_freq_16MHz iug_ionosonde_sgk_freq_17MHz '+$
-                 'iug_ionosonde_sgk_freq_18MHz' ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
 
+  ;just spot checking cause there are a lot of data types
+  print_tvar_info,'iug_ionosonde_sgk_freq_2MHz'
+
+  if ~data_exists('iug_ionosonde_sgk_freq_2MHz', qa_timespan[qa_t,0], qa_timespan[qa_t,1]) $
+    then message,'invalid load'
 endif
 catch,/cancel
 handle_error,err,t_name,++t_num

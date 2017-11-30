@@ -66,7 +66,7 @@
 ;
 ; $LastChangedBy: A. Shinbori $
 ; $LastChangedDate: 2011-10-22 (22 Oct 2011) $
-; $LastChangedRevision: 2014-01-11 (11 Jan 2014) $
+; $LastChangedRevision: 2017-11-29 (29 Nov 2017) $
 ; $URL: $
 ;-
 
@@ -84,14 +84,14 @@ thm_init
 ;	*** set time span ***
 qa_timespan = strarr(2,2)
 
-qa_timespan[0,*] = [ '2010-08-12', '2010-08-13']
+qa_timespan[0,*] = [ '2006-03-01', '2006-03-02']
 
 qa_timespan[1,*] = [ '2011-07-29', '2011-07-30']
 
 qa_t = 0
 ;;qa_t = 1
 
-timespan,qa_timespan[qa_t,0],1,/hour
+timespan,qa_timespan[qa_t,0],1
 
 del_data,'*'
 
@@ -107,16 +107,13 @@ if err eq 0 then begin
   iug_load_blr_rish
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+                  'iug_blr_ktb_wdt5', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif
@@ -142,7 +139,7 @@ if err eq 0 then begin
   iug_load_blr_rish,site='ktb'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
@@ -174,7 +171,7 @@ if err eq 0 then begin
    iug_load_blr_rish,site='ktb sgk'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
@@ -209,17 +206,14 @@ if err eq 0 then begin
 ;;	print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  then message,'invalid load'
   
 endif
 
@@ -244,7 +238,7 @@ if err eq 0 then begin
   iug_load_blr_rish,site='KTB'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
@@ -276,17 +270,14 @@ if err eq 0 then begin
   iug_load_blr_rish,site = 'all'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  then message,'invalid load'
 
 endif
 
@@ -311,18 +302,14 @@ if err eq 0 then begin
   iug_load_blr_rish, site='*'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_sgk rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
-    
+                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  then message,'invalid load'
 endif
 
 catch,/cancel
@@ -349,9 +336,9 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_srp_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  if ~data_exists('iug_blr_ktb_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
 endif
@@ -381,10 +368,9 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_srp_uwnd '+$
-                  'iug_blr_srp_vwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
 endif
@@ -414,10 +400,9 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_pwr1 iug_blr_ktb_wdt1 '+$
-                  'iug_blr_srp_uwnd iug_blr_srp_pwr1 iug_blr_srp_wdt1' $
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_pwr1 iug_blr_ktb_wdt1'$
                   ,qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
@@ -448,9 +433,9 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_srp_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  if ~data_exists('iug_blr_ktb_uwnd',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
   then message,'invalid load'
 
 endif
@@ -481,17 +466,14 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  then message,'invalid load'
 
 endif
 
@@ -519,17 +501,11 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_srp'
+  print_tvar_info,'iug_blr_*'
   
-  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
-                  'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
-                  'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
-                  'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+  if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd'$
+                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  then message,'invalid load'
 
 endif
 
@@ -557,17 +533,14 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'rish_blr_ktb rish_blr_ktb'
+  print_tvar_info,'iug_blr_*'
 
   if ~data_exists('iug_blr_ktb_uwnd iug_blr_ktb_vwnd iug_blr_ktb_wwnd '+$
                   'iug_blr_ktb_pwr1 iug_blr_ktb_pwr2 iug_blr_ktb_pwr3 '+$
                   'iug_blr_ktb_pwr4 iug_blr_ktb_pwr5 iug_blr_ktb_wdt1 '+$
                   'iug_blr_ktb_wdt2 iug_blr_ktb_wdt3 iug_blr_ktb_wdt4 '+$
-                  'iug_blr_ktb_wdt5 iug_blr_srp_uwnd iug_blr_srp_vwnd '+$
-                  'iug_blr_srp_wwnd iug_blr_srp_pwr1 iug_blr_srp_pwr2 '+$
-                  'iug_blr_srp_pwr3 iug_blr_srp_wdt1 iug_blr_srp_wdt2 '+$
-                  'iug_blr_srp_wdt3', qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    then message,'invalid load'
+                  'iug_blr_ktb_wdt5 ',qa_timespan[qa_t,0],qa_timespan[qa_t,1])$
+  then message,'invalid load'
 
 endif
 
@@ -611,7 +584,7 @@ catch,err
 if err eq 0 then begin
   iug_load_blr_rish,site='ktb',/downloadonly
 
-  if data_exists('iug_blr_ktb_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
+  if data_exists('iug_blr_*',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
     then message,'invalid load'
 
 endif

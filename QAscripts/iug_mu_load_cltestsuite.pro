@@ -127,7 +127,7 @@ if err eq 0 then begin
   iug_load_mu
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_trop_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -168,7 +168,7 @@ if err eq 0 then begin
   iug_load_mu, datatype = 'troposphere'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_trop_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -198,7 +198,7 @@ if err eq 0 then begin
   iug_load_mu, datatype = 'troposphere mesosphere'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_trop_* iug_mu_meso_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -238,7 +238,7 @@ if err eq 0 then begin
   iug_load_mu, datatype = ['troposphere','mesosphere']
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_trop_* iug_mu_meso_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -282,7 +282,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_trop_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -316,7 +316,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -360,7 +360,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -404,7 +404,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -444,7 +444,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -489,7 +489,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -533,7 +533,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -573,7 +573,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -617,7 +617,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_stdobs_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_trop_uwnd iug_mu_trop_vwnd iug_mu_trop_wwnd iug_mu_trop_dpl1 iug_mu_trop_dpl2 iug_mu_trop_dpl3 '+$
                   'iug_mu_trop_dpl4 iug_mu_trop_dpl5 iug_mu_trop_pwr1 iug_mu_trop_pwr2 iug_mu_trop_pwr3 iug_mu_trop_pwr4 '+$
@@ -650,7 +650,7 @@ timespan,qa_timespan[qa_t,0],1,/day
 ;
 ;14 single parameter for meteor mode observarion
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00'
 ;
 
 t_name='single parameter'
@@ -665,7 +665,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_meteor_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_meteor_uwnd_h1t60min00 iug_mu_meteor_vwnd_h1t60min00 iug_mu_meteor_uwndsig_h1t60min00 '+$
                   'iug_mu_meteor_vwndsig_h1t60min00 iug_mu_meteor_mwnum_h1t60min00',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
@@ -682,7 +682,7 @@ del_data,'*'
 ;
 ;15 multi parameters string
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'h1t60min00 h2t60min00'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'h1t60min00 h2t60min00'
 ;
 
 t_name='multi parameter string'
@@ -697,7 +697,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_meteor_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_meteor_uwnd_h1t60min00 iug_mu_meteor_vwnd_h1t60min00 iug_mu_meteor_uwndsig_h1t60min00 '+$
                   'iug_mu_meteor_vwndsig_h1t60min00 iug_mu_meteor_mwnum_h1t60min00 iug_mu_meteor_uwnd_h2t60min00 '+$
@@ -716,7 +716,7 @@ del_data,'*'
 ;
 ;16 multi parameters array
 ;
-; iug_load_mu, datatype = 'meteor', parameter = ['h1t60min00','h2t60min00']
+; iug_load_mu, datatype = 'meteor', parameter1 = ['h1t60min00','h2t60min00']
 ;
 
 t_name='multi parameter array'
@@ -731,7 +731,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_meteor_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_meteor_uwnd_h1t60min00 iug_mu_meteor_vwnd_h1t60min00 iug_mu_meteor_uwndsig_h1t60min00 '+$
                   'iug_mu_meteor_vwndsig_h1t60min00 iug_mu_meteor_mwnum_h1t60min00 iug_mu_meteor_uwnd_h2t60min00 '+$
@@ -750,7 +750,7 @@ del_data,'*'
 ;
 ;17 caps parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'H1T60MIN00'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'H1T60MIN00'
 ;
 
 t_name='caps parameter'
@@ -765,7 +765,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_meteor_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_meteor_uwnd_h1t60min00 iug_mu_meteor_vwnd_h1t60min00 iug_mu_meteor_uwndsig_h1t60min00 '+$
                   'iug_mu_meteor_vwndsig_h1t60min00 iug_mu_meteor_mwnum_h1t60min00',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
@@ -782,7 +782,7 @@ del_data,'*'
 ;
 ;18 load all parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter = 'all'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'all'
 ;
 
 t_name='all parameter'
@@ -797,7 +797,7 @@ if err eq 0 then begin
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_meteor_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_meteor_uwnd_h1t60min00 iug_mu_meteor_vwnd_h1t60min00 iug_mu_meteor_uwndsig_h1t60min00 '+$
                   'iug_mu_meteor_vwndsig_h1t60min00 iug_mu_meteor_mwnum_h1t60min00 iug_mu_meteor_uwnd_h2t60min00 '+$
@@ -819,7 +819,7 @@ del_data,'*'
 ;
 ;19 load * parameters
 ;
-; iug_load_mu, datatype = 'meteor', parameter = '*'
+; iug_load_mu, datatype = 'meteor', parameter1 = 'all'
 ; 
 
 t_name='* parameter'
@@ -828,13 +828,13 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_mu, datatype = 'meteor', parameter = '*'
+  iug_load_mu, datatype = 'meteor', parameter = 'all'
 ;;  print, '%%%'
 ;;  tplot_names
 ;;  print, '%%%'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'mu_meteor_nc'
+  print_tvar_info,'iug_mu_*'
 
   if ~data_exists('iug_mu_meteor_uwnd_h1t60min00 iug_mu_meteor_vwnd_h1t60min00 iug_mu_meteor_uwndsig_h1t60min00 '+$
                   'iug_mu_meteor_vwndsig_h1t60min00 iug_mu_meteor_mwnum_h1t60min00 iug_mu_meteor_uwnd_h2t60min00 '+$
