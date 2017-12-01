@@ -26,55 +26,39 @@
 ;
 ; iug_load_meteor_rish,site='*'
 ;
-;8 single datatype
-;
-; iug_load_meteor_rish,datatype='thermosphere'
-;
-;9 caps datatype
-;
-; iug_load_meteor_rish,datatype='THERMOSPHERE'
-;
-;10 * datatype
-;
-; iug_load_meteor_rish,datatype='*'
-;
-;11 array datatype
-;
-; iug_load_meteor_rish,datatype=['thermosphere']
-;
-;12 single parameter
+;8 single parameter
 ;
 ; iug_load_meteor_rish,parameter='h2t60min00'
 ;
-;13 multi parameters string
+;9 multi parameters string
 ;
 ; iug_load_meteor_rish,site = 'h2t60min00 h4t60min00'
 ;
-;14 multi parameters array
+;10 multi parameters array
 ;
 ; iug_load_meteor_rish,site = ['h2t60min00', 'h2t60min30', 'h4t60min00', 'h4t60min30']
 ;
-;15 caps parameter
+;11 caps parameter
 ;
 ; iug_load_meteor_rish,parameter='H2T60MIN00'
 ;
-;16 * parameter
+;12 * parameter
 ;
 ; iug_load_meteor_rish,parameter='*'
 ;
-;17 array parameter
+;13 array parameter
 ;
 ; iug_load_meteor_rish,parameter=['h2t60min00']
 ; 
-;18 all parameter
+;14 all parameter
 ;
 ; iug_load_meteor_rish,parameter='all'
 ; 
-;19 verbose
+;15 verbose
 ;
 ; iug_load_meteor_rish,site='ktb',/verbose
 ;
-;20 /downloadonly
+;16 /downloadonly
 ;
 ; iug_load_meteor_rish,site='ktb',/downloadonly
 ;
