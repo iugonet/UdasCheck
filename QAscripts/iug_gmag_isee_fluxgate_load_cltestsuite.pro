@@ -1,58 +1,58 @@
 ;
 ;1 basic
-; iug_load_gmag_stel_fluxgate
+; iug_load_gmag_isee_fluxgate
 ;
 ;2 single site
 ;
-; iug_load_gmag_stel_fluxgate,site='kag'
+; iug_load_gmag_isee_fluxgate,site='kag'
 ;
 ;3 multi sites string
 ;
-; iug_load_gmag_stel_fluxgate,site='msr kag'
+; iug_load_gmag_isee_fluxgate,site='msr kag'
 ;
 ;4 multi sites array
 ;
-; iug_load_gmag_stel_fluxgate,site=['mdm', 'tew', 'rik', 'ktb']
+; iug_load_gmag_isee_fluxgate,site=['mdm', 'tew', 'rik', 'ktb']
 ;
 ;5 caps site
 ;
-; iug_load_gmag_stel_fluxgate,site='MSR'
+; iug_load_gmag_isee_fluxgate,site='MSR'
 ;
 ;6 load all sites
 ;
-; iug_load_gmag_stel_fluxgate,site='all'
+; iug_load_gmag_isee_fluxgate,site='all'
 ;
 ;7 load * sites
 ;
-; iug_load_gmag_stel_fluxgate,site='*'
+; iug_load_gmag_isee_fluxgate,site='*'
 ;
 ;8 single datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype='1min', site='msr'
+; iug_load_gmag_isee_fluxgate, datatype='1min', site='msr'
 ;
 ;9 caps datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype='1MIN'
+; iug_load_gmag_isee_fluxgate, datatype='1MIN'
 ;
 ;10 * datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype='*', site='kag'
+; iug_load_gmag_isee_fluxgate, datatype='*', site='kag'
 ;
 ;11 array datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype=['1MIN', '1sec']
+; iug_load_gmag_isee_fluxgate, datatype=['1MIN', '1sec']
 ;
 ;12 /downloadonly
 ;
-; iug_load_gmag_stel_fluxgate, site='msr', /downloadonly
+; iug_load_gmag_isee_fluxgate, site='msr', /downloadonly
 ;
 ;13 /no_download
 ;
-; iug_load_gmag_stel_fluxgate, /no_download
+; iug_load_gmag_isee_fluxgate, /no_download
 ;
 ;14 /no_server
 ;
-; iug_load_gmag_stel_fluxgate, /no_server
+; iug_load_gmag_isee_fluxgate, /no_server
 ;
 ; $LastChangedBy: segawa $
 ; $LastChangedDate: 2014-01-24 15:53:15 +0900 (Fri, 24 Jan 2014) $
@@ -79,7 +79,7 @@ timespan,qa_timespan[qa_t]
 del_data,'*'
 
 ;1 Basic Test
-; iug_load_gmag_stel_fluxgate
+; iug_load_gmag_isee_fluxgate
 
 t_name='basic'
 cmp_TName = $
@@ -89,7 +89,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate
+  iug_load_gmag_isee_fluxgate
 
   ; just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -108,7 +108,7 @@ del_data,'*'
 
 ;2 single site
 ;
-; iug_load_gmag_stel_fluxgate,site='kag'
+; iug_load_gmag_isee_fluxgate,site='kag'
 ;
 
 t_name='single site'
@@ -117,7 +117,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate,site='kag'
+  iug_load_gmag_isee_fluxgate,site='kag'
 
 ;just spot checking cause there are a lot of data types
   print_tvar_info, $
@@ -138,7 +138,7 @@ del_data,'*'
 
 ;3 multi sites string
 ;
-; iug_load_gmag_stel_fluxgate,site='msr kag'
+; iug_load_gmag_isee_fluxgate,site='msr kag'
 ;
 
 t_name='multi site string'
@@ -148,7 +148,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate,site='msr kag'
+  iug_load_gmag_isee_fluxgate,site='msr kag'
 
 ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -167,7 +167,7 @@ del_data,'*'
 
 ;4 multi sites array
 ;
-; iug_load_gmag_stel_fluxgate,site=['mdm', 'tew', 'rik', 'ktb']
+; iug_load_gmag_isee_fluxgate,site=['mdm', 'tew', 'rik', 'ktb']
 ;
 
 t_name='multi sites array'
@@ -178,7 +178,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate,site=['mdm', 'tew', 'rik', 'ktb']
+  iug_load_gmag_isee_fluxgate,site=['mdm', 'tew', 'rik', 'ktb']
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -197,7 +197,7 @@ del_data,'*'
 
 ;5 caps site
 ;
-; iug_load_gmag_stel_fluxgate,site=['MSR']
+; iug_load_gmag_isee_fluxgate,site=['MSR']
 ;
 
 t_name='caps site'
@@ -207,7 +207,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate,site=['MSR']
+  iug_load_gmag_isee_fluxgate,site=['MSR']
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -227,7 +227,7 @@ del_data,'*'
 ;
 ;6 load all sites
 ;
-; iug_load_gmag_stel_fluxgate,site='all'
+; iug_load_gmag_isee_fluxgate,site='all'
 ;
 ;
 
@@ -239,7 +239,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate,site='all'
+  iug_load_gmag_isee_fluxgate,site='all'
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -258,7 +258,7 @@ del_data,'*'
 
 ;7 load * sites
 ;
-; iug_load_gmag_stel_fluxgate,site='*'
+; iug_load_gmag_isee_fluxgate,site='*'
 ;
 
 t_name='*'
@@ -269,7 +269,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate,site='*'
+  iug_load_gmag_isee_fluxgate,site='*'
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -288,7 +288,7 @@ del_data,'*'
 
 ;8 datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype='1min', site='msr'
+; iug_load_gmag_isee_fluxgate, datatype='1min', site='msr'
 ;
 
 t_name='datatype'
@@ -298,7 +298,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, datatype='1min', site='msr'
+  iug_load_gmag_isee_fluxgate, datatype='1min', site='msr'
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -317,7 +317,7 @@ del_data,'*'
 
 ;9 caps datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype='1MIN'
+; iug_load_gmag_isee_fluxgate, datatype='1MIN'
 ;
 
 t_name='caps datatype'
@@ -327,7 +327,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, datatype='1MIN'
+  iug_load_gmag_isee_fluxgate, datatype='1MIN'
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -346,7 +346,7 @@ del_data,'*'
 
 ;10 * datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype='*', site='kag'
+; iug_load_gmag_isee_fluxgate, datatype='*', site='kag'
 ;
 
 t_name='* datatype'
@@ -356,7 +356,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, datatype='*', site='kag'
+  iug_load_gmag_isee_fluxgate, datatype='*', site='kag'
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -375,7 +375,7 @@ del_data,'*'
 
 ;11 array datatype
 ;
-; iug_load_gmag_stel_fluxgate, datatype=['1MIN', '1sec']
+; iug_load_gmag_isee_fluxgate, datatype=['1MIN', '1sec']
 ;
 
 t_name='array datatype'
@@ -386,7 +386,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, datatype=['1MIN', '1sec']
+  iug_load_gmag_isee_fluxgate, datatype=['1MIN', '1sec']
 
   ;just spot checking cause there are a lot of data types
   print_tvar_info, cmp_TName
@@ -405,7 +405,7 @@ del_data,'*'
 
 ;12 /downloadonly
 ;
-; iug_load_gmag_stel_fluxgate, site='msr', /downloadonly
+; iug_load_gmag_isee_fluxgate, site='msr', /downloadonly
 ;
 
 t_name = '/downloadonly'
@@ -416,7 +416,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, site='msr', /downloadonly
+  iug_load_gmag_isee_fluxgate, site='msr', /downloadonly
 
   IF data_exists(cmp_TName, qa_timespan[qa_t,0], qa_timespan[qa_t,1]) THEN $
 	message,'existed data'
@@ -432,7 +432,7 @@ del_data,'*'
 
 ;13 /no_download
 ;
-; iug_load_gmag_stel_fluxgate, /no_download
+; iug_load_gmag_isee_fluxgate, /no_download
 
 t_name = 'no_download'
 cmp_TName = $
@@ -445,7 +445,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, /no_download
+  iug_load_gmag_isee_fluxgate, /no_download
 
   IF data_exists(cmp_TName, qa_timespan[qa_t,0], qa_timespan[qa_t,1]) THEN $
     message, 'Unexpected data in temporary directory'+root_data_dir()
@@ -463,7 +463,7 @@ del_data,'*'
 
 ;14 /no_server
 ;
-; iug_load_gmag_stel_fluxgate, /no_server
+; iug_load_gmag_isee_fluxgate, /no_server
 
 t_name = 'no_server'
 cmp_TName = $
@@ -473,7 +473,7 @@ catch,err
 
 if err eq 0 then begin
 
-  iug_load_gmag_stel_fluxgate, /no_server
+  iug_load_gmag_isee_fluxgate, /no_server
 
   IF ~data_exists(cmp_TName, qa_timespan[qa_t,0], qa_timespan[qa_t,1]) THEN $
     message,'invalid data load'
