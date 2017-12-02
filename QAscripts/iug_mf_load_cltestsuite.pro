@@ -26,27 +26,11 @@
 ;
 ; iug_load_mf_rish,site='*'
 ;
-;8 single datatype
-;
-; iug_load_mf_rish,datatype='thermosphere'
-;
-;9 caps datatype
-;
-; iug_load_mf_rish,datatype='THERMOSPHERE'
-;
-;10 * datatype
-;
-; iug_load_mf_rish,datatype='*'
-;
-;11 array datatype
-;
-; iug_load_mf_rish,datatype=['thermosphere']
-;
-;12 verbose
+;8 verbose
 ;
 ; iug_load_mf_rish,site='pam',/verbose
 ;
-;13 /downloadonly
+;9 /downloadonly
 ;
 ; iug_load_mf_rish,site='pam',/downloadonly
 ;
@@ -289,134 +273,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;8 single datatype
-;
-; iug_load_mf_rish, datatype = 'thermosphere'
-;
-
-t_name='single datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_mf_rish, datatype = 'thermosphere'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'iug_mf_*'
-
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
-                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
-                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;9 caps datatype
-;
-; iug_load_mf_rish, datatype = 'THERMOSPHERE'
-;
-
-t_name='caps datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_mf_rish, datatype = 'THERMOSPHERE'
-	print, tnames('*')
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'iug_mf_*'
-
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
-                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
-                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;10 * datatype
-;
-; iug_load_mf_rish,datatype = '*'
-;
-
-t_name='* datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_mf_rish,datatype = '*'
-;;	print, '%%%'
-;;	tplot_names
-;;	print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'iug_mf_*'
-
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
-                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
-                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-
-;
-;11 array datatype
-;
-; iug_load_mf_rish,datatype = ['thermosphere']
-;
-
-t_name='array datatype'
-
-catch,err
-
-if err eq 0 then begin
-
-  iug_load_mf_rish,datatype = ['thermosphere']
-;;  print, '%%%'
-;;  tplot_names
-;;  print, '%%%'
-
-;just spot checking cause there are a lot of data types
-  print_tvar_info,'iug_mf_*'
-
-  if ~data_exists('iug_mf_pam_uwnd iug_mf_pam_vwnd iug_mf_pam_wwnd '+$
-                  'iug_mf_pon_uwnd iug_mf_pon_vwnd iug_mf_pon_wwnd'$
-                  ,qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-  then message,'invalid load'
-
-endif
-
-catch,/cancel
-
-handle_error,err,t_name,++t_num
-
-del_data,'*'
-
-;
-;12 verbose
+;8 verbose
 ;
 ;iug_load_mf_rish,site='pam',/verbose
 ;
@@ -438,7 +295,7 @@ handle_error,err,t_name,++t_num
 del_data,'*'
 
 ;
-;13 /downloadonly
+;9 /downloadonly
 ;
 ;  iug_load_mf_rish,site='pam',/downloadonly
 ;
