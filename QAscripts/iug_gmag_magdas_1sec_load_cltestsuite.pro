@@ -93,10 +93,10 @@ IF err EQ 0 THEN BEGIN
   iug_load_gmag_magdas_1sec
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'magdas_mag_onw_1sec_hdz'
+  print_tvar_info,'magdas_mag_onw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_yap_1sec_hdz'
 
-  IF ~data_exists('magdas_mag_onw_1sec_hdz',qa_timespan[qa_t,0],qa_timespan[qa_t,1]) $
-    THEN message,'invalid load'
+  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_yap_1sec_hdz', $
+        qa_timespan[qa_t,0],qa_timespan[qa_t,1]) THEN message,'invalid load'
 
 ENDIF
 
@@ -137,7 +137,7 @@ del_data,'*'
 ;
 ;3 multi sites string
 ;
-; iug_load_gmag_magdas_1sec,site='onw daw'
+; iug_load_gmag_magdas_1sec,site='onw asb yap'
 ;
 
 t_name='multi site string'
@@ -146,12 +146,12 @@ CATCH,err
 
 IF err EQ 0 THEN BEGIN
 
-  iug_load_gmag_magdas_1sec, site='onw daw'
+  iug_load_gmag_magdas_1sec, site='onw asb yap'
 
 ;just spot checking cause there are a lot of data types
-  print_tvar_info,'magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz'
+  print_tvar_info,'magdas_mag_onw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_yap_1sec_hdz'
 
-  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz', $
+  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_yap_1sec_hdz', $
 	qa_timespan[qa_t,0],qa_timespan[qa_t,1]) THEN message,'invalid load'
 
 ENDIF
@@ -165,7 +165,7 @@ del_data,'*'
 ;
 ;4 multi sites array
 ;
-; iug_load_gmag_magdas_1sec,site=['onw', 'daw', 'asb']
+; iug_load_gmag_magdas_1sec,site=['onw', 'asb', 'yap']
 ;
 
 t_name='multi sites array'
@@ -174,14 +174,14 @@ CATCH,err
 
 IF err EQ 0 THEN BEGIN
 
-  iug_load_gmag_magdas_1sec,site=['onw', 'daw', 'asb']
+  iug_load_gmag_magdas_1sec,site=['onw', 'asb', 'yap']
 
 ;just spot checking cause there are a lot of data types
   print_tvar_info, $
-    'magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz magdas_mag_asb_1sec_hdz'
+    'magdas_mag_onw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_yap_1sec_hdz'
 
   IF ~data_exists($
-    'magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz magdas_mag_asb_1sec_hdz', $
+    'magdas_mag_onw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_yap_1sec_hdz', $
     qa_timespan[qa_t,0],qa_timespan[qa_t,1]) THEN message,'invalid load'
 
 ENDIF
@@ -236,9 +236,9 @@ IF err EQ 0 THEN BEGIN
 
 ;just spot checking cause there are a lot of data types
   print_tvar_info, $
-    'magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz'
+    'magdas_mag_onw_1sec_hdz magdas_mag_yap_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz'
 
-  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz',$
+  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_yap_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz',$
     qa_timespan[qa_t,0],qa_timespan[qa_t,1]) THEN message,'invalid load'
 
 ENDIF
@@ -265,9 +265,9 @@ IF err EQ 0 THEN BEGIN
 
 ;just spot checking cause there are a lot of data types
   print_tvar_info, $
-    'magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz'
+    'magdas_mag_onw_1sec_hdz magdas_mag_yap_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz'
 
-  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_daw_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz',$
+  IF ~data_exists('magdas_mag_onw_1sec_hdz magdas_mag_yap_1sec_hdz magdas_mag_asb_1sec_hdz magdas_mag_ama_1sec_hdz',$
     qa_timespan[qa_t,0],qa_timespan[qa_t,1]) THEN message,'invalid load'
 
 ENDIF
