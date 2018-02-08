@@ -7,6 +7,7 @@ iug_camera_omti_asi_load_cltestsuite.pro
 iug_ear_load_cltestsuite.pro
 iug_eiscat_load_cltestsuite.pro
 iug_eiscat_vief_load_cltestsuite.pro
+iug_gmag_icswse_load_cltestsuite.pro
 iug_gmag_isee_fluxgate_load_cltestsuite.pro
 iug_gmag_isee_induction_load_cltestsuite.pro
 iug_gmag_magdas_1sec_load_cltestsuite.pro
